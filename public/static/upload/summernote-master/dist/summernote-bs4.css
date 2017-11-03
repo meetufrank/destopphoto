@@ -536,8 +536,8 @@
 .card-header.note-toolbar .dropdown-menu.note-check a i
 {
     visibility: hidden;;
-
-    color: deepskyblue;
+color: #F44336;
+    // color: deepskyblue;
 }.note-popover .popover-content .dropdown-menu.note-check a.checked i,
 .card-header.note-toolbar .dropdown-menu.note-check a.checked i
 {
