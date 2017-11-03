@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50553
+Source Server         : mysql
+Source Server Version : 50617
 Source Host           : localhost:3306
-Source Database       : lunhui_tp5
+Source Database       : lunhui
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2017-09-13 16:44:06
+Date: 2017-11-03 14:25:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,7 +62,7 @@ CREATE TABLE `think_admin` (
 -- ----------------------------
 -- Records of think_admin
 -- ----------------------------
-INSERT INTO `think_admin` VALUES ('1', 'admin', '218dbb225911693af03a713581a7227f', '20161122\\admin.jpg', '308', '0.0.0.0', '1505291620', 'admin', '1', '1', '1ac2fc424c64cdf80db98a246f439287');
+INSERT INTO `think_admin` VALUES ('1', 'admin', '218dbb225911693af03a713581a7227f', '20161122\\admin.jpg', '309', '127.0.0.1', '1509678409', 'admin', '1', '1', '1ac2fc424c64cdf80db98a246f439287');
 INSERT INTO `think_admin` VALUES ('13', 'test', '218dbb225911693af03a713581a7227f', '20161122\\293c8cd05478b029a378ac4e5a880303.jpg', '1797', '116.23.230.7', '1502432142', 'test', '1', '4', '4ee2e395e9921f515d00599a5f79ae3f');
 
 -- ----------------------------
@@ -165,7 +165,7 @@ CREATE TABLE `think_auth_group` (
 -- Records of think_auth_group
 -- ----------------------------
 INSERT INTO `think_auth_group` VALUES ('1', '超级管理员', '1', '', '1446535750', '1446535750');
-INSERT INTO `think_auth_group` VALUES ('4', '系统测试员', '1', '1,2,9,3,30,4,39,61,62,5,6,7,27,29,13,14,22,24,25,40,41,43,26,44,45,47,48,49,50,51,52,53,54,55,56,57,58,70,71,72,73,80,75,76,77,79', '1446535750', '1501581108');
+INSERT INTO `think_auth_group` VALUES ('4', '系统测试员', '1', '1,2,9,3,30,4,39,5,6,7,27,29,70,75,85', '1446535750', '1509683492');
 
 -- ----------------------------
 -- Table structure for think_auth_group_access
@@ -202,7 +202,7 @@ CREATE TABLE `think_auth_rule` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of think_auth_rule
@@ -219,12 +219,6 @@ INSERT INTO `think_auth_rule` VALUES ('9', 'admin/user/useradd', '添加用户',
 INSERT INTO `think_auth_rule` VALUES ('10', 'admin/user/useredit', '编辑用户', '1', '1', '', '', '2', '50', '1477312169', '1477312169');
 INSERT INTO `think_auth_rule` VALUES ('11', 'admin/user/userdel', '删除用户', '1', '1', '', '', '2', '50', '1477312169', '1477312169');
 INSERT INTO `think_auth_rule` VALUES ('12', 'admin/user/user_state', '用户状态', '1', '1', '', '', '2', '50', '1477312169', '1477312169');
-INSERT INTO `think_auth_rule` VALUES ('13', '#', '日志管理', '1', '1', 'fa fa-tasks', '', '0', '6', '1477312169', '1477312169');
-INSERT INTO `think_auth_rule` VALUES ('14', 'admin/log/operate_log', '行为日志', '1', '1', '', '', '13', '50', '1477312169', '1477312169');
-INSERT INTO `think_auth_rule` VALUES ('22', 'admin/log/del_log', '删除日志', '1', '1', '', '', '14', '50', '1477312169', '1477316778');
-INSERT INTO `think_auth_rule` VALUES ('24', '#', '文章管理', '1', '1', 'fa fa-paste', '', '0', '4', '1477312169', '1477312169');
-INSERT INTO `think_auth_rule` VALUES ('25', 'admin/article/index_cate', '文章分类', '1', '1', '', '', '24', '10', '1477312260', '1477312260');
-INSERT INTO `think_auth_rule` VALUES ('26', 'admin/article/index', '文章列表', '1', '1', '', '', '24', '20', '1477312333', '1477312333');
 INSERT INTO `think_auth_rule` VALUES ('27', 'admin/data/import', '数据库还原', '1', '1', '', '', '5', '50', '1477639870', '1477639870');
 INSERT INTO `think_auth_rule` VALUES ('28', 'admin/data/revert', '还原', '1', '1', '', '', '27', '50', '1477639972', '1477639972');
 INSERT INTO `think_auth_rule` VALUES ('29', 'admin/data/del', '删除', '1', '1', '', '', '27', '50', '1477640011', '1477640011');
@@ -238,41 +232,9 @@ INSERT INTO `think_auth_rule` VALUES ('36', 'admin/menu/edit_rule', '编辑菜�
 INSERT INTO `think_auth_rule` VALUES ('37', 'admin/menu/del_rule', '删除菜单', '1', '1', '', '', '4', '50', '1477640011', '1477640011');
 INSERT INTO `think_auth_rule` VALUES ('38', 'admin/menu/rule_state', '菜单状态', '1', '1', '', '', '4', '50', '1477640011', '1477640011');
 INSERT INTO `think_auth_rule` VALUES ('39', 'admin/menu/ruleorder', '菜单排序', '1', '1', '', '', '4', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('40', 'admin/article/add_cate', '添加分类', '1', '1', '', '', '25', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('41', 'admin/article/edit_cate', '编辑分类', '1', '1', '', '', '25', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('42', 'admin/article/del_cate', '删除分类', '1', '1', '', '', '25', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('43', 'admin/article/cate_state', '分类状态', '1', '1', '', '', '25', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('44', 'admin/article/add_article', '添加文章', '1', '1', '', '', '26', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('45', 'admin/article/edit_article', '编辑文章', '1', '1', '', '', '26', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('46', 'admin/article/del_article', '删除文章', '1', '1', '', '', '26', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('47', 'admin/article/article_state', '文章状态', '1', '1', '', '', '26', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('48', '#', '广告管理', '1', '1', 'fa fa-image', '', '0', '5', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('49', 'admin/ad/index_position', '广告位', '1', '1', '', '', '48', '10', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('50', 'admin/ad/add_position', '添加广告位', '1', '1', '', '', '49', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('51', 'admin/ad/edit_position', '编辑广告位', '1', '1', '', '', '49', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('52', 'admin/ad/del_position', '删除广告位', '1', '1', '', '', '49', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('53', 'admin/ad/position_state', '广告位状态', '1', '1', '', '', '49', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('54', 'admin/ad/index', '广告列表', '1', '1', '', '', '48', '20', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('55', 'admin/ad/add_ad', '添加广告', '1', '1', '', '', '54', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('56', 'admin/ad/edit_ad', '编辑广告', '1', '1', '', '', '54', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('57', 'admin/ad/del_ad', '删除广告', '1', '1', '', '', '54', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('58', 'admin/ad/ad_state', '广告状态', '1', '1', '', '', '54', '50', '1477640011', '1477640011');
-INSERT INTO `think_auth_rule` VALUES ('83', '#', '示例', '1', '1', 'fa fa-paper-plane', '', '0', '50', '1505281878', '1505281878');
-INSERT INTO `think_auth_rule` VALUES ('84', 'admin/demo/sms', '发送短信', '1', '1', '', '', '83', '50', '1505281944', '1505281944');
-INSERT INTO `think_auth_rule` VALUES ('61', 'admin/config/index', '配置管理', '1', '1', '', '', '1', '50', '1479908607', '1479908607');
-INSERT INTO `think_auth_rule` VALUES ('62', 'admin/config/index', '配置列表', '1', '1', '', '', '61', '50', '1479908607', '1487943813');
-INSERT INTO `think_auth_rule` VALUES ('63', 'admin/config/save', '保存配置', '1', '1', '', '', '61', '50', '1479908607', '1487943831');
 INSERT INTO `think_auth_rule` VALUES ('70', '#', '会员管理', '1', '1', 'fa fa-users', '', '0', '3', '1484103066', '1484103066');
-INSERT INTO `think_auth_rule` VALUES ('72', 'admin/member/add_group', '添加会员组', '1', '1', '', '', '71', '50', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('71', 'admin/member/group', '会员组', '1', '1', '', '', '70', '10', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('73', 'admin/member/edit_group', '编辑会员组', '1', '1', '', '', '71', '50', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('74', 'admin/member/del_group', '删除会员组', '1', '1', '', '', '71', '50', '1484103304', '1484103304');
 INSERT INTO `think_auth_rule` VALUES ('75', 'admin/member/index', '会员列表', '1', '1', '', '', '70', '20', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('76', 'admin/member/add_member', '添加会员', '1', '1', '', '', '75', '50', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('77', 'admin/member/edit_member', '编辑会员', '1', '1', '', '', '75', '50', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('78', 'admin/member/del_member', '删除会员', '1', '1', '', '', '75', '50', '1484103304', '1484103304');
-INSERT INTO `think_auth_rule` VALUES ('79', 'admin/member/member_status', '会员状态', '1', '1', '', '', '75', '50', '1484103304', '1487937671');
-INSERT INTO `think_auth_rule` VALUES ('80', 'admin/member/group_status', '会员组状态', '1', '1', '', '', '71', '50', '1484103304', '1484103304');
+INSERT INTO `think_auth_rule` VALUES ('85', 'admin/member/downloadfile', '下载专属桌面', '1', '1', '', '', '75', '50', '1509683458', '1509683458');
 
 -- ----------------------------
 -- Table structure for think_config
@@ -315,7 +277,7 @@ CREATE TABLE `think_log` (
   `status` tinyint(1) DEFAULT NULL COMMENT '1 成功 2 失败',
   `add_time` int(11) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4355 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4366 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of think_log
@@ -337,6 +299,17 @@ INSERT INTO `think_log` VALUES ('4350', '1', 'admin', '用户【admin】添加�
 INSERT INTO `think_log` VALUES ('4351', '1', 'admin', '用户【admin】添加菜单成功', '0.0.0.0', '1', '1505281944');
 INSERT INTO `think_log` VALUES ('4352', '1', 'admin', '用户【admin】登录成功', '0.0.0.0', '1', '1505283850');
 INSERT INTO `think_log` VALUES ('4354', '1', 'admin', '用户【admin】登录成功', '0.0.0.0', '1', '1505291620');
+INSERT INTO `think_log` VALUES ('4355', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509615362');
+INSERT INTO `think_log` VALUES ('4356', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509615368');
+INSERT INTO `think_log` VALUES ('4357', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509615375');
+INSERT INTO `think_log` VALUES ('4358', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509615381');
+INSERT INTO `think_log` VALUES ('4359', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509615386');
+INSERT INTO `think_log` VALUES ('4360', '1', 'admin', '用户【admin】登录成功', '127.0.0.1', '1', '1509678409');
+INSERT INTO `think_log` VALUES ('4361', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509683376');
+INSERT INTO `think_log` VALUES ('4362', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509683384');
+INSERT INTO `think_log` VALUES ('4363', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509683390');
+INSERT INTO `think_log` VALUES ('4364', '1', 'admin', '用户【admin】删除菜单成功', '127.0.0.1', '1', '1509683395');
+INSERT INTO `think_log` VALUES ('4365', '1', 'admin', '用户【admin】添加菜单成功', '127.0.0.1', '1', '1509683458');
 
 -- ----------------------------
 -- Table structure for think_member
@@ -349,7 +322,7 @@ CREATE TABLE `think_member` (
   `sex` int(10) DEFAULT NULL COMMENT '1男2女',
   `password` char(32) DEFAULT NULL,
   `group_id` int(11) DEFAULT NULL,
-  `head_img` varchar(128) DEFAULT NULL COMMENT '头像',
+  `head_img` text COMMENT '头像',
   `integral` int(11) DEFAULT '0' COMMENT '积分',
   `money` int(11) DEFAULT '0' COMMENT '账户余额',
   `mobile` varchar(11) DEFAULT NULL COMMENT '认证的手机号码',
@@ -360,25 +333,21 @@ CREATE TABLE `think_member` (
   `closed` tinyint(1) DEFAULT '0' COMMENT '0正常，1删除',
   `token` char(32) DEFAULT '0' COMMENT '令牌',
   `session_id` varchar(20) DEFAULT NULL,
+  `openid` varchar(255) DEFAULT NULL,
+  `unicount` varchar(6) DEFAULT NULL COMMENT '//专属码',
+  `photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=212066 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=212072 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of think_member
 -- ----------------------------
-INSERT INTO `think_member` VALUES ('2', '1217037610', 'XiMi丶momo', '2', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\ab9f9c492871857e1a6c5bc1c658ef7f.jpg', '300', '200', '18809321956', '1476779394', '1476779394', '0', '1', '1', '0', '');
-INSERT INTO `think_member` VALUES ('1', '18809321929', '醉凡尘丶Wordly', '1', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\admin.jpg', '92960', '73', '18809321929', '1476762875', '1476762875', '0', '1', '0', '0', '');
-INSERT INTO `think_member` VALUES ('3', '1217037610', '紫陌轩尘', '1', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\293c8cd05478b029a378ac4e5a880303.jpg', '400', '434', '49494', '1476676516', '1476676516', '0', '1', '1', '0', '');
-INSERT INTO `think_member` VALUES ('4', '', 'fag', '1', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\8a69f4c962e26265fd9f12efbff65013.jpg', '24', '424', '242', '1476425833', '1476425833', '0', '0', '1', '0', '');
-INSERT INTO `think_member` VALUES ('5', '18809321928', '空谷幽兰', '2', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\admin.jpg', '53', '3636', '3636', '1476676464', '1476676464', '0', '1', '0', '0', '');
-INSERT INTO `think_member` VALUES ('6', '', '787367373', '1', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\ab9f9c492871857e1a6c5bc1c658ef7f.jpg', '414', '9', '73737373', '1476425750', '1476425750', '0', '0', '1', '0', '');
-INSERT INTO `think_member` VALUES ('7', '18809321929', 'XMi丶呵呵', '2', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\293c8cd05478b029a378ac4e5a880303.jpg', '373373', '33', '73', '1476692255', '1476692255', '0', '0', '0', '0', '');
-INSERT INTO `think_member` VALUES ('8', '1246470984', 'XY', '1', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\8a69f4c962e26265fd9f12efbff65013.jpg', '7383', '73737373', '7373', '1476692123', '1476692123', '0', '1', '1', '0', '');
-INSERT INTO `think_member` VALUES ('9', '18793189097', '25773', '1', 'd41d8cd98f00b204e9800998ecf8427e', '1', '20161122\\admin.jpg', '7373737', '77', '7373733', '1476433452', '1476433452', '0', '1', '1', '0', '');
-INSERT INTO `think_member` VALUES ('10', '1246470984', 'XiYu', '2', 'e10adc3949ba59abbe56e057f20f883e', '1', '20161122\\ab9f9c492871857e1a6c5bc1c658ef7f.jpg', '100', '100', '18793189091', '1476694831', '1476694831', '0', '1', '1', '0', '');
-INSERT INTO `think_member` VALUES ('11', '', '烟勤话少脾气好', '0', '', '1', '20161122\\293c8cd05478b029a378ac4e5a880303.jpg', '0', '0', '', '1488030906', '0', '0', '0', '0', '0', '');
-INSERT INTO `think_member` VALUES ('12', '1246470984', 'XiYu', '2', 'e10adc3949ba59abbe56e057f20f883e', '1', '20161122\\8a69f4c962e26265fd9f12efbff65013.jpg', '100', '100', '18793189091', '1488030906', '1476694831', '0', '1', '1', '0', '');
-INSERT INTO `think_member` VALUES ('212065', '111', '111', '0', 'deb2a3420354e40d55a1b0cb3a947cd0', '121', '<!doctype html>\n<html>\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n    <title>跳转提示</title>\n', '0', '0', '', '1502341127', '1502341127', null, null, '0', '0', null);
+INSERT INTO `think_member` VALUES ('212066', null, '。', '1', null, '1', 'http://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaELKKVDMUia0QkgSat7zxvXWDZaK5qu1oLmDia84FHZonzLDFrEywGia1g3a6rfbg28xytjAW3pqoA58g/0', '0', '0', null, '1509610681', '1509613738', null, null, '0', '0', null, 'okRTqvpPRPq2WXM_1kXSAcQSZx2g', '', null);
+INSERT INTO `think_member` VALUES ('212067', null, '西瓜桥', '1', null, '1', 'http://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaELKKVDMUia0QkgSat7zxvXWDZaK5qu1oLmDia84FHZonzLDFrEywGia1g3a6rfbg28xytjAW3pqoA58g/0', '0', '0', null, '1509612045', '1509613338', null, null, '0', '0', null, 'okRTqvqRF0wqAu5zb6bshEJ5H48c', '', null);
+INSERT INTO `think_member` VALUES ('212068', null, 'Klein_Blue', '1', null, '1', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLDKGLJp8rsvrwuiaDkdBDo9zP6Vb7dvaCicwKDEibNusz44h7ILG2AFAtKllYKenhr8iaDZ498elwtkMw/0', '0', '0', null, '1509612362', '1509612362', null, null, '0', '0', null, 'okRTqvltI75BOta8p8xb_c096AnE', '', null);
+INSERT INTO `think_member` VALUES ('212069', null, 'WebYs', '1', null, '1', 'http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoIbss8MuKPicGC5ibA9LssJ6SPSsDIAP3TeKzjHZ13cTO4ibvJHeUFLhp0A36ia2nwRHW7r037icUGfPg/0', '0', '0', null, '1509612673', '1509613557', null, null, '0', '0', null, 'okRTqvtuF8edafszy3PlxVXHm8us', null, null);
+INSERT INTO `think_member` VALUES ('212070', null, 'Frank', '0', null, '1', 'http://wx.qlogo.cn/mmopen/vi_32/BZ0iakAttMwIZJROwBx3d1oNh3icF4TJA3S3c6TUSCwgGlqjTpBibUKvGD1nOCv5JZvPXic9t9j8unG6hs3bbYPM3g/0', '0', '0', null, '1509613299', '1509613413', null, null, '0', '0', null, 'okRTqviXTlp_kbc2VuQlfw99-FXY', null, null);
+INSERT INTO `think_member` VALUES ('212071', null, '老K', '1', null, '1', 'http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJMWl3EYJ7sNU1oCuQ1tZia9NWjXgYo84Chgde9YZ3XR4AZXW7Y70qiau9uh2onCWba7v7AEzOFhbWQ/0', '0', '0', null, '1509613601', '1509613601', null, null, '0', '0', null, 'okRTqvvt9sAqHsu1sggFvyZaXJ-8', null, null);
 
 -- ----------------------------
 -- Table structure for think_member_group
@@ -396,9 +365,7 @@ CREATE TABLE `think_member_group` (
 -- ----------------------------
 -- Records of think_member_group
 -- ----------------------------
-INSERT INTO `think_member_group` VALUES ('1', '系统组', '0', '1441616559', '1502341098');
-INSERT INTO `think_member_group` VALUES ('2', '游客组', '1', '1441617195', '1502281865');
-INSERT INTO `think_member_group` VALUES ('3', 'VIP', '1', '1441769224', null);
+INSERT INTO `think_member_group` VALUES ('1', '会员', '1', '1441616559', '1509615286');
 
 -- ----------------------------
 -- Table structure for think_user
