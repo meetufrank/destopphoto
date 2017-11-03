@@ -2,10 +2,12 @@
 namespace app\home\controller;
 use think\Db;
 use think\Controller;
+use think\Cookie;
 class Upload extends controller
 {
 
     public function uploadimg(){
+       
       if(isset($_FILES["file"])){
         $file = $_FILES["file"];
         if(!isset($file['tmp_name']) || !$file['tmp_name']) {
@@ -32,6 +34,21 @@ class Upload extends controller
             exit;
         }
         }
+    }
+
+    public function uploadphoto(){
+        // print_r($_POST['data']);exit;
+        $path='uploads/destop/';
+        $output_file = time().'.png';
+        $path = $path.$output_file;
+        $base_img = str_replace('data:image/png;base64,', '', $_POST['data']);
+        $data=base64_decode($base_img);
+        $file=file_put_contents($path, base64_decode($base_img));
+         
+        $msg['msg']=1;
+        cookie::set('imgurl','/'.$path);
+        echo json_encode($msg);
+        exit;
     }
     //返回当前的毫秒时间戳
         function msectime() {
