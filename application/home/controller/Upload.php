@@ -6,7 +6,7 @@ class Upload extends controller
 {
 
     public function uploadimg(){
-      
+      if(isset($_FILES["file"])){
         $file = $_FILES["file"];
         if(!isset($file['tmp_name']) || !$file['tmp_name']) {
             echo json_encode(['code' => 401, 'msg' => '没有文件上传']);
@@ -30,6 +30,7 @@ class Upload extends controller
         }else{
             echo json_encode(['code' => 404, 'msg' => '上传失败']);
             exit;
+        }
         }
     }
     //返回当前的毫秒时间戳
