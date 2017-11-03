@@ -2,7 +2,7 @@
 namespace app\home\controller;
 use app\home\model\IndexModel;
 use think\Db;
-
+use think\Cookie;
 class Index extends Base
 {
 	public function index(){
@@ -24,6 +24,15 @@ class Index extends Base
       return $this->fetch();
     }
 
+    public function index5(){
+
+      return $this->fetch();
+    }
+    public function index6(){
+      
+      $this->assign('imgurl',cookie::get('imgurl'));
+      return $this->fetch();
+    }
     
 
 }
