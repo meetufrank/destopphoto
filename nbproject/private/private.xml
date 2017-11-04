@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/www/lunhui/application/admin/controller/Member.php</file>
-            <file>file:/D:/www/lunhui/application/admin/view/member/index.html</file>
+            <file>file:/D:/www/lunhui/application/home/view/index/index5.html</file>
+            <file>file:/D:/www/lunhui/application/admin/model/MemberModel.php</file>
+            <file>file:/D:/www/lunhui/public/static/upload/js/canvas2image.js</file>
             <file>file:/D:/www/lunhui/application/home/controller/Index.php</file>
-            <file>file:/D:/www/lunhui/application/admin/view/index/index.html</file>
-            <file>file:/D:/www/lunhui/application/admin/controller/Index.php</file>
+            <file>file:/D:/www/lunhui/application/home/view/index/index6.html</file>
             <file>file:/D:/www/lunhui/application/home/view/index/index.html</file>
             <file>file:/D:/www/lunhui/application/home/controller/Base.php</file>
-            <file>file:/D:/www/lunhui/extend/weixin/userinfo.php</file>
+            <file>file:/D:/www/lunhui/application/home/controller/Upload.php</file>
         </group>
     </open-files>
 </project-private>
