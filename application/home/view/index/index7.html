@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Index5</title>
+<title>Index7</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" type="text/css" href="__UPLOAD__/css/new.css" />
@@ -21,76 +21,9 @@ body{
 	background:url("__UPLOAD__/img/beijings.jpg") no-repeat center fixed;
 	-webkit-background-size:100% 100%;
 }
-.next-button6{
-	width: 36%;
-    height: 100px;
-    position: absolute;
-    bottom:0;
-}
-.yulan1{
-	width:100%;
-	height:auto;
-/*	border:1px solid white;*/
-	margin: 0  auto;
-	border-radius: 4px;
-	margin-top: 10px;
-}
-.yulan1 img{
-	width:100%;
-    height: auto;
-}
-.cut-line{
-	width: 100%;
-	height: 10px;
-	background-color: transparent;
-	border: 1px solid transparent;
-}
-.double-button{
-    width: 100%;
-    text-align: center;
-    margin-bottom:5px;
-    margin-top: 3px;
-}
-.zsm-button{
-    color: white;
-    font-size:1.5rem;
-    font-weight: bold;
-    background-color: transparent;
-    border:2px solid white;
-    letter-spacing: 3px;
-}
-/*.yulan2{
-	width:45%;
-	height:100%;
-	border:2px solid white;
-	margin: 0  auto;
-	border-radius: 4px;
-}
-.yulan2 img{
-	width:100%;
-    height: auto;
-}*/
+
 </style>  
 </head>
-<body class="body-bgimg6">
-	<div class="yulan1">
-		<img src="{$imgurl}">
-	</div>
-	<div class="cut-line"></div>
-<!-- 	<div class="yulan2">
-		<img src="{$imgurl}">
-	</div> -->
-	<div class="double-button">
-  		<button class="btn btn-primary zsm-button" type="button" onclick="zsm();">生成专属码</button>
-  	</div>
-	<div class="next-button6" onClick="BackPage();"></div>
-	<script type="text/javascript">
-		function BackPage(){
-			window.location.href="{:url('Index/index')}";
-		}
-		function zsm(){
-			window.location.href="{:url('Index/index7')}";
-		}
-	</script>
+<body>
 </body>
 </html>
