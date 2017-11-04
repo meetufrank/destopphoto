@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index4</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+html,body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}  
+body{
+	background:url("__UPLOAD__/img/4.jpg") no-repeat center fixed;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.back-button4{
+	width:50%;
+	height:50px;
+	/*border:1px solid red;*/
+	/*color: red;*/
+	position:absolute;
+    bottom:2%;
+}
+.next-button41{
+	width: 90%;
+    height:50px;
+    position: absolute;
+    bottom:59%;
+    margin-left: -45%;
+    left:50%;
+    background-color:transparent;
+}
+.next-button42{
+	width: 90%;
+    height:50px;
+    position: absolute;
+    bottom:39%;
+    margin-left: -45%;
+    left:50%;
+    background-color:transparent;
+}
+</style>  
+</head>
+<body>
+	<div class="back-button4" onClick="BackPage();"></div>
+	<div class="next-button41" onClick="NextPage1();"></div>
+	<div class="next-button42" onClick="NextPage2();"></div>
+	<script type="text/javascript">
+		function BackPage(){
+			window.location.href="{:url('Index/index3')}";
+		}
+		function NextPage1(){
+			window.location.href="{:url('Index/index5')}";
+		}
+		function NextPage2(){
+			window.location.href="{:url('Index/index5')}";
+		}
+	</script>
+</body>
+</html>
