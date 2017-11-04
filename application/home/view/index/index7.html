@@ -20,27 +20,79 @@ body{
 	background:url("__UPLOAD__/img/codeimg.jpg") no-repeat center fixed;
 	-webkit-background-size:100% 100%;
 }
+/* iphone4 */
+@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){
+	.code-center{
+		margin-top: 142px;
+		height: 50px;
+		line-height:50px;
+		font-size:1.7em;
+    	letter-spacing: 0.7em;
+    	font-weight: bold;
+	}
+}
+/* iphone5 */
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+	.code-center{
+		margin-top:170px;
+		height: 50px;
+		line-height:50px;
+		font-size:1.7em;
+	    letter-spacing: 0.7em;
+	    font-weight: bold;
+	}
+}
+/* iphone6 */
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+	.code-center{
+		margin-top:205px;
+		height: 50px;
+		line-height:50px;
+		font-size:1.7em;
+	    letter-spacing: 0.7em;
+	    font-weight: bold;
+	}
+}
+/* iphone6p */
+@media only screen and (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+	.code-center{
+		margin-top:230px;
+		height: 50px;
+		line-height:50px;
+		font-size:1.7em;
+	    letter-spacing: 0.7em;
+	    font-weight: bold;
+	}
+}
 .code-center{
 	font-family: ff-tisa-web-pro-1, serif;
 	text-align: center;
-	height: 50px;
-	line-height:50px;
-	font-size:2.3em;
-	letter-spacing:0.28em;
-	-webkit-text-stroke: 1px #64A9E9;
-	border:2px solid white;
-	width: 100%;
-	margin-top:55%; 
 	color: white;
 	position: absolute;
 	left: 0;
     right: 0;
     margin-left: auto;
-    margin-right: auto;
+/*	-webkit-text-stroke: 1px #64A9E9;*/
+/*    margin-right: auto;*/
+    width: 95%;
+}
+.next-button7{
+	width:50%;
+	height:60px;
+	/*border:1px solid red;*/
+	/*color: red;*/
+	position:absolute;
+    bottom:2%;
 }
 </style>  
 </head>
 <body>
 	<div class="code-center">123456</div>
+	<div class="next-button7" onClick="BackPage();"></div>
+	<script type="text/javascript">
+		function BackPage(){
+			window.location.href="{:url('Index/index')}";
+		}
+	</script>
 </body>
 </html>
