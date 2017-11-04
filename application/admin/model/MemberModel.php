@@ -12,7 +12,7 @@ class MemberModel extends Model
     /**
      * 根据搜索条件获取用户列表信息
      */
-    public function getMemberByWhere($map, $Nowpage=, $limits)
+    public function getMemberByWhere($map, $Nowpage, $limits)
     {
         return $this->field('think_member.*,group_name')->join('think_member_group', 'think_member.group_id = think_member_group.id')
             ->where($map)->page($Nowpage, $limits)->order("case when ifnull(unicount,'')='' then 0 else 1 end desc")->select();

@@ -8,9 +8,10 @@
 namespace app\home\controller;
 use app\home\model\IndexModel;
 use think\Db;
+use think\Controller;
 use think\Cookie;
 use app\admin\model\MemberModel;
-class Ajax extends Base
+class Arequest extends controller
 {
     //上传生成专属码
     public function getcode() {
@@ -21,8 +22,9 @@ class Ajax extends Base
          $map=[
              'openid'=> cookie::get('openid')
                  ];
-          $count=$member->where($map)->getAllCount();
-          if($count){
+         $user=$member->where($map)->find();
+                
+          if(!empty($user['unicount'])){
                    echo json_encode(['code'=>0,'msg'=>'您已生成专属码，无需再次生成']);
                    exit;
                 }
@@ -37,7 +39,7 @@ class Ajax extends Base
                    'openid'=> cookie::get('openid'),
                     'unicount'=>$num
                  ];
-                $count=$member->where($map)->getAllCount();
+                $count=$member->getAllCount($map);
                 if($count){
                     $num++;
                 }else{

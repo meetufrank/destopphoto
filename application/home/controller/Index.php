@@ -7,6 +7,7 @@ use app\admin\model\MemberModel;
 class Index extends Base
 {
 	public function index(){
+            cookie::set('openid','okRTqvpPRPq2WXM_1kXSAcQSZx2g');
       return $this->fetch();
     }
 
@@ -35,7 +36,18 @@ class Index extends Base
       return $this->fetch();
     }
     public function index7(){
-
+      
+        //查询该用户的专属码
+        $map=[
+          'openid'=>Cookie::get('openid')
+           ];
+          $member=new MemberModel();
+            $user=$member->where($map)->find();
+            if($user['unicount']){
+                $this->assign('unicount',$user['unicount']);
+            }else{
+                 header("Location:".url('Index/index'));
+            }
       return $this->fetch();
     }
     

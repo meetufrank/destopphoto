@@ -84,12 +84,28 @@ body{
   		<button class="btn btn-primary zsm-button" type="button" onclick="zsm();">生成专属码</button>
   	</div>
 	<div class="next-button6" onClick="BackPage();"></div>
+        
+        <script src="__UPLOAD__/js/jquery.js"></script>
 	<script type="text/javascript">
 		function BackPage(){
 			window.location.href="{:url('Index/index')}";
 		}
 		function zsm(){
-			window.location.href="{:url('Index/index7')}";
+                    alert('正在为您派发专属码，请稍等');
+                       $.ajax({
+                          url:"{:url(\'Arequest/getcode\')}",
+                          dataType:'json',
+                          type:'post',
+                          success:function(re){
+                               if(re.code==1){
+                                 window.location.href="{:url('Index/index7')}";
+                               }else{
+                                   alert(re.msg);
+                               }
+
+                             }
+                           });
+			
 		}
 	</script>
 </body>

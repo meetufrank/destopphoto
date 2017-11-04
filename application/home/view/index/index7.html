@@ -87,8 +87,10 @@ body{
 </style>  
 </head>
 <body>
-	<div class="code-center">123456</div>
+	<div class="code-center">{$unicount}</div>
+        {if condition="$unicount"}
 	<div class="next-button7" onClick="BackPage();"></div>
+        {/if}
 	<script type="text/javascript">
 		function BackPage(){
 			window.location.href="{:url('Index/index')}";
