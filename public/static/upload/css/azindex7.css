@@ -1,3 +1,39 @@
+.code-center{
+	font-family: ff-tisa-web-pro-1, serif;
+	text-align: center;
+	color: white;
+	position: absolute;
+	left: 0;
+    right: 0;
+    margin-left: auto;
+    width: 95%;
+	height: 50px;
+	line-height:50px;
+	font-size:1.7em;
+	letter-spacing: 0.7em;
+	font-weight: bold;
+}
+// /* iphone6 */
+// @media only screen and (min-device-width: 375px) {
+// 	.code-center{
+// 		margin-top:205px;
+// 	}
+// }
+// @media screen and (max-device-width:240px){
+// 	.code-center{
+// 		    margin-top: 170px;
+// 	}
+// }
+// @media only screen and (min-device-width: 241px) and (max-device-height:360px){
+// 	.code-center{
+// 		    margin-top:230px;
+// 	}
+// }
+// @media only screen and (min-device-width:361px) and (max-device-height:480px){
+// 	.code-center{
+// 		    margin-top:230px;
+// 	}
+// }
 @media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){
 	.code-center{
 		margin-top: 142px;
@@ -20,12 +56,12 @@
 }
 @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
 	.code-center{
-		margin-top:185px;
+		margin-top:200px;
 		height: 50px;
 		line-height:50px;
 		font-size:1.7em;
-	    letter-spacing: 0.7em;
-	    font-weight: bold;
+		letter-spacing: 0.7em;
+		font-weight: bold;
 	}
 }
 @media only screen and (device-height:736px) and (-webkit-min-device-pixel-ratio:2){

@@ -1,5 +1,14 @@
+.code-center{
+	font-family: ff-tisa-web-pro-1, serif;
+	text-align: center;
+	color: white;
+	position: absolute;
+	left: 0;
+    right: 0;
+    margin-left: auto;
+    width: 95%;
+}
 /* iphone4 */
-/*@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){*/
 @media screen and (device-width: 320px)and (-webkit-device-pixel-ratio: 2){
 	.code-center{
 		margin-top: 142px;
@@ -11,7 +20,6 @@
 	}
 }
 /* iphone5 */
-/*@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){*/
 @media screen and (device-width: 320px)and (-webkit-device-pixel-ratio: 2){
 	.code-center{
 		margin-top:150px;
