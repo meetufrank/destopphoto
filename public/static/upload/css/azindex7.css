@@ -34,7 +34,7 @@
 // 		    margin-top:230px;
 // 	}
 // }
-@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){
+@media screen and (min-device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){
 	.code-center{
 		margin-top: 142px;
 		height: 50px;
@@ -44,7 +44,7 @@
     	font-weight: bold;
 	}
 }
-@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+@media screen and (min-device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
 	.code-center{
 		margin-top:150px;
 		height: 50px;
@@ -64,7 +64,7 @@
 		font-weight: bold;
 	}
 }
-@media only screen and (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+@media only screen and (min-device-height:736px) and (-webkit-min-device-pixel-ratio:2){
 	.code-center{
 		margin-top:230px;
 		height: 50px;
