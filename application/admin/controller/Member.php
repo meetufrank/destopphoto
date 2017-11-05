@@ -33,37 +33,7 @@ class Member extends Base
         }
         return $this->fetch();
     }
-    /*
-     * 下载专属桌面
-     */
-       public function downloadfile(Request $request){
-           
-        $member = new MemberModel(); 
-       $hash_str=$request->param('id');
-       $file_data= $member->where(['id'=>$hash_str])->find();
-       if(empty($file_data['photo'])){
-           echo '<script>alert(\'该用户无专属桌面!\')</script>';
-           exit;
-        };
-        $file =$file_data['photo'];
-        $ext=pathinfo($file, PATHINFO_EXTENSION); 
-        if(empty($file_data['unicount'])){
-           echo '<script>alert(\'该用户无专属号码!\')</script>';
-           exit;
-        };
-        $filename = $file_data['unicount'].'.'.$ext;
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header("Content-type:text/html;charset=utf-8");
-        header('Content-Disposition: attachment; filename='. $filename);
-        header('Content-Transfer-Encoding: binary');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        header('Pragma: public');
-        readfile($file);
-        echo '<script>window.close();</script>';
-        exit;
-    }
+ 
 
     /**
      * [add_group 添加会员组]

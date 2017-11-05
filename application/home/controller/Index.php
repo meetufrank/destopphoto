@@ -7,7 +7,7 @@ use app\admin\model\MemberModel;
 class Index extends Base
 {
 	public function index(){
-            cookie::set('openid','okRTqvpPRPq2WXM_1kXSAcQSZx2g');
+           
       return $this->fetch();
     }
 
