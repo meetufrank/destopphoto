@@ -52,8 +52,8 @@
       color:lightgrey;  
       content:attr(placeholder);
     }
-    /*上传图片插件*/
-    .js_showBox {
+    /*默认图片*/
+    .Box {
       width:95%;
       height: auto; 
       margin: 0 auto;
@@ -62,16 +62,9 @@
       border-radius:4px;
       position: relative;
       z-index: 9998;
-    }
-/*   .js_showBox_height{
-      min-height: 320px;
-    }*/
-    .js_showBox_border{
       border:2px solid #e6e6e6;
     }
-    .js_showBox img {
-/*      width: 100px;
-      height: 100px;*/
+    .Box img {
       width: 100%;
     }
     .btn-upload {
@@ -146,8 +139,8 @@
 </head>
 <body class="body-bgimg5">
 <div class="main" id="main">
-  <div class="js_showBox js_showBox_height js_showBox_border">
-    <img class="js_logoBox" src="" id="myImage">
+  <div class="Box">
+    <img class="js_logoBox" src="__UPLOAD__/img/VCG41465400127.jpg" id="myImage">
   </div>
 <div class="click2edit input-summer input-summer-border removeaction" contenteditable="true" placeholder="先设置下格式再输入吧" id="removeborder"></div>
 </div>
@@ -276,8 +269,8 @@ $("#shengcheng").click(function(event) {
   }
 
 });
-var num=0;
-var img_urls = ['__UPLOAD__/img/VCG41186461942.jpg','__UPLOAD__/img/VCG41465400127.jpg','__UPLOAD__/img/VCG41538110050.jpg','__UPLOAD__/img/VCG41545799559 (1).jpg','__UPLOAD__/img/VCG41596174762.jpg','__UPLOAD__/img/VCG211127900291.jpg'];
+var num=1;
+var img_urls = ['__UPLOAD__/img/VCG41465400127.jpg','__UPLOAD__/img/VCG41538110050.jpg','__UPLOAD__/img/VCG41545799559 (1).jpg','__UPLOAD__/img/VCG41596174762.jpg','__UPLOAD__/img/VCG211127900291.jpg'];
 //动态更换图片路径方法
 function changesrc(){
    if(num<img_urls.length){
@@ -289,7 +282,6 @@ function changesrc(){
     num=0;
    }
 }
-changesrc();
 </script>
 </body>
 </html>
