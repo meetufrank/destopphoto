@@ -274,13 +274,15 @@ var img_urls = ['__UPLOAD__/img/VCG41465400127.jpg','__UPLOAD__/img/VCG415381100
 //动态更换图片路径方法
 function changesrc(){
    if(num<img_urls.length){
-    alert('更换中');
+    
     document.getElementById("myImage").src=img_urls[num];
     num++;
    }else{
-    alert('2');
+    
     num=0;
+    document.getElementById("myImage").src=img_urls[num];
    }
+   
 }
 </script>
 </body>
