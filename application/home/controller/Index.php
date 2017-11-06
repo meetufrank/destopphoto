@@ -58,6 +58,7 @@ class Index extends Base
                 $this->assign('unicount',$user['unicount']);
             }else{
                  header("Location:".url('Index/index'));
+                 exit;
             }
       return $this->fetch();
     }
