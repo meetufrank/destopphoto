@@ -5,8 +5,10 @@
         <group>
             <file>file:/D:/www/lunhui/application/home/controller/Arequest.php</file>
             <file>file:/D:/www/lunhui/application/admin/controller/Member.php</file>
+            <file>file:/D:/www/lunhui/application/home/view/index/index7.html</file>
             <file>file:/D:/www/lunhui/application/admin/view/member/index.html</file>
             <file>file:/D:/www/lunhui/application/home/controller/Index.php</file>
+            <file>file:/D:/www/lunhui/application/home/controller/Base.php</file>
         </group>
     </open-files>
 </project-private>
