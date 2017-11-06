@@ -277,7 +277,9 @@ $("#shengcheng").click(function(event) {
           //添加属性
           canvas.setAttribute('id','thecanvas');
           document.getElementById('images').appendChild(canvas);
+           
           var oCanvas = document.getElementById("thecanvas");
+         
           var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
               $.ajax({
               url:"{:url(\'upload/uploadphoto\')}",
