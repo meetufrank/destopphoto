@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上传选择</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+html,body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}  
+body{
+	background:url("__UPLOAD__/img/beijings.jpg") no-repeat center fixed;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.back-button4{
+	width:50%;
+	height:50px;
+/*	border:1px solid red;
+	color: red;*/
+	position:absolute;
+    bottom:2%;
+}
+.next-page-one{
+	width: 85%;
+    height: 150px;
+    /* position: absolute; */
+    border:3px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.next-page-two{
+	width:55%;
+    height:250px;
+    /* position: absolute; */
+    border:3px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top:10px;
+}
+</style>  
+</head>
+<body>
+	<div class="back-button4" onClick="BackPage();"></div>
+	<div class="next-page-one" onClick="NextPage1();"></div>
+    <div class="next-page-two" onClick="NextPage1();"></div>
+	<script type="text/javascript">
+		function BackPage(){
+			window.location.href="{:url('Index/index4')}";
+		}
+		function NextPage1(){
+			window.location.href="{:url('Index/index5')}";
+		}
+	</script>
+</body>
+</html>
