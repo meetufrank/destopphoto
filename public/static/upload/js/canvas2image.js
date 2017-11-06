@@ -161,8 +161,29 @@ var Canvas2Image = (function() {
 			oSaveCtx.drawImage(oCanvas, 0, 0, oCanvas.width, oCanvas.height, 0, 0, iWidth, iWidth);
 			
 			return oSaveCanvas;
-		}
-		return oCanvas;
+		}else{
+                    var canvas = document.createElement("canvas");
+                    var ctx = canvas.getContext('2d');
+
+                    // polyfill 提供了这个方法用来获取设备的 pixel ratio
+                    var getPixelRatio = function(context) {
+                        var backingStore = context.backingStorePixelRatio ||
+                            context.webkitBackingStorePixelRatio ||
+                            context.mozBackingStorePixelRatio ||
+                            context.msBackingStorePixelRatio ||
+                            context.oBackingStorePixelRatio ||
+                            context.backingStorePixelRatio || 1;
+
+                        return (window.devicePixelRatio || 1) / backingStore;
+                    };
+
+                  var ratio = getPixelRatio(ctx);
+    
+                  // 注意，这里的 width 和 height 变成了 width * ratio 和 height * ratio
+                  ctx.drawImage(oCanvas, 0, 0, 300 * ratio, 90 * ratio);
+                  return ctx;
+                }
+		
 	}
 
 	return {
