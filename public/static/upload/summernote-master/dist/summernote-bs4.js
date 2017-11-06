@@ -7828,9 +7828,10 @@
       styleTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
 
       fontNames: [
-        'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
-        'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande',
-        'Tahoma', 'Times New Roman', 'Verdana'
+        // 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
+        // 'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande',
+        // 'Tahoma', 'Times New Roman', 'Verdana'
+        'Microsoft Yahei', 'Times New Roman', 'cursive'
       ],
 
       fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36'],
