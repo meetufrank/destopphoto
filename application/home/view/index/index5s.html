@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自定义上传</title>
+    <title>默认背景图</title>
     <link rel="stylesheet" type="text/css" href="__UPLOAD__/css/webuploader.css" />
     <link rel="stylesheet" type="text/css" href="__UPLOAD__/css/style.css" />
     <link rel="stylesheet" type="text/css" href="__UPLOAD__/css/new.css" />
@@ -63,15 +63,16 @@
       position: relative;
       z-index: 9998;
     }
-    .js_showBox_height{
+/*   .js_showBox_height{
       min-height: 320px;
-    }
+    }*/
     .js_showBox_border{
       border:2px solid #e6e6e6;
     }
     .js_showBox img {
 /*      width: 100px;
       height: 100px;*/
+      width: 100%;
     }
     .btn-upload {
       width: 150px;
@@ -145,36 +146,22 @@
 </head>
 <body class="body-bgimg5">
 <div class="main" id="main">
-<div class="control-group js_uploadBox" id="center" onClick="a()">
   <div class="js_showBox js_showBox_height js_showBox_border">
-    <img class="js_logoBox" src="">
+    <img class="js_logoBox" src="" id="myImage">
   </div>
-    
-<!--<div class="btn-upload" style="display: none;">
-        <a href="javascript:;" class="a-upload">
-        <input class="js_upFile" type="file" id="b" name="file">点击这里上传照片
-        </a>
-    </div>
--->
-<!--     <div class="btn-upload-new">
-        <a href="javascript:;" class="a-upload-new">
-        <input class="js_upFile-new">请先上传图片,再输入文字,才可上传
-        </a>
-    </div> -->
-    
-</div>
 <div class="click2edit input-summer input-summer-border removeaction" contenteditable="true" placeholder="先设置下格式再输入吧" id="removeborder"></div>
 </div>
 <div class="double-button">
+  <button class="btn btn-primary" onclick="changesrc();" type="button">更换图片</button>
   <button id="edit" class="btn btn-primary" onclick="edit()" type="button">编辑格式</button>
   <button id="save" class="btn btn-primary" onclick="save()" type="button">保存文字</button>
 </div>
 <p class="clearfix"></p>
-<div class="double-button"><button class="btn btn-primary hidebutton" type="button" id="shengcheng">预览图片</button></div>
-<p class="clearfix"></p>
 <div class="double-button">
-  <button class="btn btn-primary" type="button" onclick="window.location.href='{:url('Index/index4')}'">返回上一页</button>
+  <button class="btn btn-primary hidebutton" type="button" id="shengcheng">预览图片</button>
+  <button class="btn btn-primary" type="button" onclick="window.location.href='{:url('Index/index4s')}'">返回上一页</button>
 </div>
+<p class="clearfix"></p>
 <div id="images" style="display: none;"></div>
 <script src="__UPLOAD__/js/draggabilly.pkgd.min.js"></script>
 <!-- <script src="__UPLOAD__/js/upload.js"></script> -->
@@ -289,6 +276,20 @@ $("#shengcheng").click(function(event) {
   }
 
 });
+var num=0;
+var img_urls = ['__UPLOAD__/img/VCG41186461942.jpg','__UPLOAD__/img/VCG41465400127.jpg','__UPLOAD__/img/VCG41538110050.jpg','__UPLOAD__/img/VCG41545799559 (1).jpg','__UPLOAD__/img/VCG41596174762.jpg','__UPLOAD__/img/VCG211127900291.jpg'];
+//动态更换图片路径方法
+function changesrc(){
+   if(num<img_urls.length){
+    alert('1');
+    document.getElementById("myImage").src=img_urls[num];
+    num++;
+   }else{
+    alert('2');
+    num=0;
+   }
+}
+changesrc();
 </script>
 </body>
 </html>
