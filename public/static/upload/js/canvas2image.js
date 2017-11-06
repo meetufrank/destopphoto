@@ -158,7 +158,7 @@ var Canvas2Image = (function() {
 
 			var oSaveCtx = oSaveCanvas.getContext("2d");
 
-			oSaveCtx.drawImage(oCanvas, 0, 0, oCanvas.width, oCanvas.height, 0, 0, iWidth, iWidth);
+			oSaveCtx.drawImage(oCanvas, 0, 0, oCanvas.width, oCanvas.height, 0, 0, iWidth, iHeight);
 			
 			return oSaveCanvas;
 		}
