@@ -270,19 +270,16 @@ $("#shengcheng").click(function(event) {
 
 });
 var num=1;
-var img_urls = ['__UPLOAD__/img/VCG41465400127.jpg','__UPLOAD__/img/VCG41538110050.jpg','__UPLOAD__/img/VCG41545799559 (1).jpg','__UPLOAD__/img/VCG41596174762.jpg','__UPLOAD__/img/VCG211127900291.jpg'];
+var img_urls = ['__UPLOAD__/img/VCG41465400127.jpg','__UPLOAD__/img/VCG41538110050.jpg','__UPLOAD__/img/VCG41545799559 (1).jpg','__UPLOAD__/img/VCG41596174762.jpg','__UPLOAD__/img/VCG211127900291.jpg','__UPLOAD__/img/VCG41186461942.jpg'];
 //动态更换图片路径方法
 function changesrc(){
    if(num<img_urls.length){
-    
     document.getElementById("myImage").src=img_urls[num];
     num++;
    }else{
-    
     num=0;
     document.getElementById("myImage").src=img_urls[num];
    }
-   
 }
 </script>
 </body>
