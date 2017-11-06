@@ -185,9 +185,8 @@
 <script src="__UPLOAD__/js/upload.js"></script>
   <script src="__UPLOAD__/js/html2canvas.min.js"></script>
 
-
   <!-- 将canvas图片保存成图片 -->
-  <script src="__UPLOAD__/js/canvas2image.js?v=2.0"></script>
+  <script src="__UPLOAD__/js/canvas2image.js"></script>
   <script src="__UPLOAD__/js/base64.js"></script>
 <script>
 window.onload=function(){
@@ -266,7 +265,6 @@ $(".js_upFile").ajaxImageUpload({
        // console.log(e);
     }
 });
- 
 //预览图片方法
 $("#shengcheng").click(function(event) {
   if($('.removeaction').css("display")=="none"){
@@ -280,7 +278,6 @@ $("#shengcheng").click(function(event) {
           canvas.setAttribute('id','thecanvas');
           document.getElementById('images').appendChild(canvas);
           var oCanvas = document.getElementById("thecanvas");
-        
           var img_data1 = Canvas2Image.saveAsPNG(oCanvas, true).getAttribute('src');
               $.ajax({
               url:"{:url(\'upload/uploadphoto\')}",
