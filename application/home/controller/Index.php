@@ -35,6 +35,12 @@ class Index extends Base
 
       return $this->fetch();
     }
+
+    public function index5s(){
+
+      return $this->fetch();
+    }
+
     public function index6(){
       
       $this->assign('imgurl',cookie::get('imgurl'));
