@@ -33,7 +33,7 @@
    */
   var isFontInstalled = function (fontName) {
     // var testFontName = fontName === 'Comic Sans MS' ? 'Courier New' : 'Comic Sans MS';
-    var testFontName = fontName === 'Tes New Roman' ? 'Microsoft Yahei' : 'cursive';
+    var testFontName = fontName === 'Microsoft Yahei' ? 'Times New Roman' : 'cursive';
     var $tester = $('<div>').css({
       position: 'absolute',
       left: '-9999px',
