@@ -19,8 +19,8 @@ var Canvas2Image = (function() {
 
 	// ok, we're good
 	var readCanvasData = function(oCanvas) {
-		var iWidth = parseInt(oCanvas.width);
-		var iHeight = parseInt(oCanvas.height);
+		var iWidth = parseInt(oCanvas.width*2);
+		var iHeight = parseInt(oCanvas.height*2);
 		return oCanvas.getContext("2d").getImageData(0,0,iWidth,iHeight);
 	}
 
