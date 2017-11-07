@@ -3,10 +3,10 @@
     font-family: 'summernote';
     font-weight: normal;
     font-style: normal;
-
     src: url('./font/summernote.eot?0d0d5fac99cc8774d89eb08b1a8323c4');
     src: url('./font/summernote.eot?#iefix') format('embedded-opentype'),url('./font/summernote.woff?0d0d5fac99cc8774d89eb08b1a8323c4') format('woff'),url('./font/summernote.ttf?0d0d5fac99cc8774d89eb08b1a8323c4') format('truetype');
-}[class^='note-icon-']:before,
+}
+[class^='note-icon-']:before,
 [class*=' note-icon-']:before
 {
     font: normal normal normal 14px summernote;

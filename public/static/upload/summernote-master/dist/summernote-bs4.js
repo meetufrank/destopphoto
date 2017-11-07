@@ -7832,9 +7832,10 @@
         // 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
         // 'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande',
         // 'Tahoma', 'Times New Roman', 'Verdana'
+        'Microsoft Yahei', 'Times New Roman', 'cursive',
         'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
-        'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande',
-        'Microsoft Yahei', 'Times New Roman', 'cursive'
+        'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande'
+        
       ],
 
       fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36'],
