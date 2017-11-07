@@ -20,19 +20,14 @@ class Arequest extends controller
             
         
          $member=new MemberModel();
-         $map=[
-             'openid'=> cookie::get('openid')
-                 ];
-         $user=$member->where($map)->find();
-                
-          if(!empty($user['unicount'])){
-                   echo json_encode(['code'=>0,'msg'=>'您已生成专属码，无需再次生成']);
-                   exit;
-                }
+        
          
          if(Cookie::has('imgurl')){
-              
-             //生成专属码
+            
+             
+                
+          if(empty($user['unicount'])){
+               //生成专属码
              $num=time();
              $num=substr($num,-6);
              while(true){
@@ -50,10 +45,16 @@ class Arequest extends controller
              $where=[
              'openid'=> cookie::get('openid')
                  ];
+           $user=$member->where($where)->find();
            $data=[
              'photo'=>cookie::get('imgurl'),
               'unicount'=>$num
             ]; 
+          }else{
+              $data=[
+             'photo'=>cookie::get('imgurl'),
+            ]; 
+          }
             $member->save($data,$where);
             echo json_encode(['code'=>1,'msg'=>'上传成功']);
                     exit;
