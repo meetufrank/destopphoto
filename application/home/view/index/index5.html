@@ -45,7 +45,7 @@
       margin-top: 3px;
     }
     .input-summer{  
-      width:85%;  
+      width:45%;  
       min-height: 100px; 
       outline:none;
       border-radius:4px;
@@ -211,9 +211,10 @@ var edit = function() {
 
       $('.click2edit').summernote({
          toolbar: [
-          ['style', ['bold', 'italic', 'underline']],
+          ['style', ['bold', 'italic']],
           ['fontsize', ['fontname','fontsize']],
           ['color', ['color']],
+          ['para', ['paragraph']],
         ],
         // fontNames: ['Times New Roman','Microsoft Yahei','cursive'],
         placeholder: '先设置格式再输入',
@@ -236,8 +237,8 @@ var save = function() {
 
 //拖拽控件方法 
 $(function(){
-  $('.click2edit').draggabilly();
-  // $('.click2edit').draggabilly({ containment: true });
+  // $('.click2edit').draggabilly();
+  $('.click2edit').draggabilly({ containment: true });
 });
 //上传插件方法 
 function a(){
