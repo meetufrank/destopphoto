@@ -26,11 +26,6 @@ class Index extends Base
       return $this->fetch();
     }
 
-     public function index4s(){
-
-      return $this->fetch();
-    }
-
     public function index5(){
 
       return $this->fetch();
