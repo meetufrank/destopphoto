@@ -245,6 +245,7 @@ function a(){
   document.getElementById('b').click();
   return false;
 }
+
 //上传图片方法 
 $(".js_upFile").ajaxImageUpload({
     url: '{:url(\'upload/uploadimg\')}', //上传的服务器地址
@@ -277,6 +278,8 @@ $(".js_upFile").ajaxImageUpload({
        // console.log(e);
     }
 });
+alert();
+$('.removeaction').position().top;
 //预览图片方法
 $("#shengcheng").click(function(event) {
   if($('.removeaction').css("display")=="none"){

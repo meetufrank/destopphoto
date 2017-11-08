@@ -21,10 +21,12 @@ class Arequest extends controller
         
          $member=new MemberModel();
         
-         
+         $where=[
+             'openid'=> cookie::get('openid')
+                 ];
          if(Cookie::has('imgurl')){
             
-             
+             $user=$member->where($where)->find();
                 
           if(empty($user['unicount'])){
                //生成专属码
@@ -42,15 +44,13 @@ class Arequest extends controller
                     break;
                 }
              }
-             $where=[
-             'openid'=> cookie::get('openid')
-                 ];
-           $user=$member->where($where)->find();
+           
            $data=[
              'photo'=>cookie::get('imgurl'),
               'unicount'=>$num
             ]; 
           }else{
+              
               $data=[
              'photo'=>cookie::get('imgurl'),
             ]; 
