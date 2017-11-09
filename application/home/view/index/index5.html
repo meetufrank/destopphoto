@@ -213,12 +213,13 @@ var edit = function() {
           ['color', ['color']],
           ['para', ['paragraph']],
         ],
-        fontSizes: ['36','42','48'],
         placeholder: '先设置格式再输入',
         tabsize: 2,
         height: 100,
         focus: true,
         });
+        $('.click2edit').summernote('fontSize', 36);
+        $('.note-current-fontsize').text('36');
 };
 $("#edit").click();
 var save = function() {
