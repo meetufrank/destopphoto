@@ -108,7 +108,7 @@ class Member extends Base
      * @author [田建龙] [864491238@qq.com]
      */
     public function index(){
-      
+     
         $key = input('key');
         $map['closed'] = 0;//0未删除，1已删除
         if($key&&$key!=="")
@@ -128,6 +128,7 @@ class Member extends Base
         {
             return json($lists);
         }
+        
         return $this->fetch();
     }
 
