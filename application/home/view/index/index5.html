@@ -270,7 +270,7 @@ $(".js_upFile").ajaxImageUpload({
     allowType: ["gif", "jpeg", "jpg", "bmp",'png'], //允许上传图片的类型
     maxSize :4, //允许上传图片的最大尺寸，单位M
     before: function () {
-        
+        $('.a-upload-new').css('border','1px solid transparent');
     },
     success:function(data){
        // alert('上传成功回调函数');
