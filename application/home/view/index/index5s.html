@@ -16,14 +16,6 @@
     <link href="__UPLOAD__/summernote-master/dist/summernote-bs4.css" rel="stylesheet">
     <script src="__UPLOAD__/summernote-master/dist/summernote-bs4.js"></script>
     <style type="text/css">
-    * {
-      -webkit-touch-callout:none;
-      -webkit-user-select:none;
-      -khtml-user-select:none;
-      -moz-user-select:none;
-      -ms-user-select:none;
-      user-select:none;
-    }
     html,body{
       margin:0;
       padding:0;
@@ -31,7 +23,7 @@
       height:100%;
     }
     body{
-      background:url("__UPLOAD__/img/beijing.jpg") no-repeat center fixed;
+      background:url("http://meetv.com.cn/wxphoto/img/beijing.jpg?imageslim");
       background-size:cover;
       background-repeat:no-repeat;
       background-position:center;
@@ -47,7 +39,7 @@
       width: 100%;
       text-align: center;
       margin-bottom:5px;
-      margin-top: 3px;
+      margin-top:10px;
     }
     .input-summer{  
       width:55%;
@@ -160,9 +152,16 @@
   <button class="btn btn-primary" onclick="changesrc();" type="button">更换图片</button>
   <button id="edit" class="btn btn-primary" onclick="edit()" type="button">编辑格式</button>
   <button id="save" class="btn btn-primary" onclick="save()" type="button">保存文字</button>
+  <button id="switcher-biggern" class="btn btn-primary hidebutton">放大字体</button>
 </div>
-<p class="clearfix"></p>
 <div class="double-button">
+  <button id="switcher-small" class="btn btn-primary hidebutton">缩小字体</button>
+  <button id="switcher-color-yellow" class="btn btn-primary hidebutton">黄色字体</button>
+  <button id="switcher-color-blue" class="btn btn-primary hidebutton">蓝色字体</button>
+  <button id="switcher-color-white" class="btn btn-primary hidebutton">白色字体</button>
+</div>
+<div class="double-button">
+  <button id="switcher-color-black" class="btn btn-primary hidebutton">黑色字体</button>
   <button class="btn btn-primary hidebutton" type="button" id="shengcheng">预览图片</button>
   <button class="btn btn-primary" type="button" onclick="window.location.href='{:url('Index/index4')}'">返回上一页</button>
 </div>
@@ -189,11 +188,10 @@ var edit = function() {
       $('.click2edit').summernote({
          toolbar: [
           ['style', ['bold', 'italic']],
-          ['fontsize', ['fontname','fontsize']],
+          ['fontsize', ['fontname']],
           ['color', ['color']],
           ['para', ['paragraph']],
         ],
-        // fontNames: ['times new roman','Microsoft Yahei','cursive'],
         placeholder: '先设置格式再输入',
         tabsize: 2,
         height: 100,
@@ -209,7 +207,14 @@ var save = function() {
       	$("#edit").click();
       }else{
       	$(".removeaction").removeClass("input-summer-border");
+        $("#switcher-biggern").removeClass("hidebutton");
+        $("#switcher-small").removeClass("hidebutton");
+        $("#switcher-color-yellow").removeClass("hidebutton");
+        $("#switcher-color-blue").removeClass("hidebutton");
+        $("#switcher-color-white").removeClass("hidebutton");
+        $("#switcher-color-black").removeClass("hidebutton");
       }
+      changetext();
 };
 
 //拖拽控件方法 
@@ -217,40 +222,6 @@ $(function(){
   // $('.click2edit').draggabilly();
   $('.click2edit').draggabilly({containment:true});
 });
-//上传插件方法 
-// function a(){
-//   document.getElementById('b').click();
-//   return false;
-// }
-//上传图片方法 
-// $(".js_upFile").ajaxImageUpload({
-//     url: '{:url(\'upload/uploadimg\')}',
-//     maxNum: 3,
-//     hidenInputName:'',
-//     zoom: true, 
-//     allowType: ["gif", "jpeg", "jpg", "bmp",'png'],
-//     maxSize :2, 
-//     before: function () {
-        
-//     },
-//     success:function(data){
-//        $('#shengcheng').show();
-//         console.log(data);
-//         if(data['code'] ){
-//             if(data['code']!=200){
-//                 alert(data['msg']);
-//             }else{
-//                 $(".js_logoBox").attr('src',data['src']);
-    
-//                 $(".js_logoBox").attr('style','display:block;width:100%;height:100%');
-//                 $("#js_showBox").removeClass("js_showBox_height js_showBox_border");
-//             }
-            
-//         }
-//     },
-//     error:function (e) {
-//     }
-// });
 //预览图片方法
 $("#shengcheng").click(function(event) {
   if($('.removeaction').css("display")=="none"){
@@ -295,6 +266,55 @@ function changesrc(){
     document.getElementById("myImage").src=img_urls[num];
    }
 }
+</script>
+<script>
+function changetext(){
+//字体的放大缩小
+var $biger = $('.click2edit').children();
+console.log($biger);
+var num = parseFloat($biger.css('fontSize')); 
+console.log(num);
+$('#switcher-biggern').click(function(){ 
+num=num+2;
+if(num>48){
+  num=48;
+  alert('已最大字体');
+}
+$biger.css('fontSize',num+'px');
+});
+$('#switcher-small').click(function(){
+num=num-2;
+if(num<16){
+  num=16;
+  alert('已最小字体');
+}
+$biger.css('fontSize',num+'px');
+});
+$('#switcher-color-yellow').click(function(){
+  $.each($biger,function() {
+    $(this).children().css("color","rgb(255,206,0)");
+    $(this).css("color","rgb(255,206,0)");
+  });
+});
+$('#switcher-color-white').click(function(){
+  $.each($biger,function() {
+    $(this).children().css("color","white");
+    $(this).css("color","white");
+  });
+});
+$('#switcher-color-blue').click(function(){
+  $.each($biger,function() {
+    $(this).children().css("color","rgb(0,30,70)");
+    $(this).css("color","rgb(0,30,70)");
+  });
+});
+$('#switcher-color-black').click(function(){
+  $.each($biger,function() {
+    $(this).children().css("color","black");
+    $(this).css("color","black");
+  });
+});
+};
 </script>
 {include file="public/footcommon" /}
 </body>
