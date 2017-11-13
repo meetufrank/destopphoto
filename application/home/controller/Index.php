@@ -31,6 +31,14 @@ class Index extends Base
       return $this->fetch();
     }
 
+    public function index8(){
+      return $this->fetch();
+    }
+    
+    public function index9(){
+      return $this->fetch();
+    }
+
     public function index5(){
 
       return $this->fetch();
@@ -46,6 +54,7 @@ class Index extends Base
       $this->assign('imgurl',cookie::get('imgurl'));
       return $this->fetch();
     }
+
     public function index7(){
       
         //查询该用户的专属码
@@ -61,13 +70,5 @@ class Index extends Base
                  exit;
             }
       return $this->fetch();
-    }
-    
-    public function index8(){
-
-    }
-    
-    public function index9(){
-      
     }
 }
