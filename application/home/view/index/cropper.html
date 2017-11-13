@@ -12,7 +12,7 @@
 </head>
 <style>
 body{
-  background:url("__UPLOAD__/img/cropperbg.jpg") no-repeat center fixed;
+  background:url("http://images.meetv.com.cn/wxphoto/img/beijings.jpg?imageslim") no-repeat center fixed;
   background-size:cover;
   background-repeat:no-repeat;
   background-position:center;
@@ -234,7 +234,7 @@ body{
             <!-- <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff"> -->
             <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
             <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="Import image with Blob URLs">
-              <span class="fa fa-upload"></span>上传
+              <span class="fa fa-upload"></span>上传图片
             </span>
           </label>
           <!-- <button type="button" class="btn btn-primary" data-method="destroy" title="Destroy">
@@ -270,15 +270,15 @@ body{
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="getCroppedCanvasTitle">Cropped</h5>
+                <h5 class="modal-title" id="getCroppedCanvasTitle">确定上传</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body"></div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary" id="download" href="javascript:void(0);" download="cropped.jpg">Download</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <a class="btn btn-primary" id="download" href="javascript:void(0);" download="cropped.jpg">下载</a>
               </div>
             </div>
           </div>
