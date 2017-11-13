@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\www\lunhui\public/../application/admin\view\member\index.html";i:1509682845;s:65:"D:\www\lunhui\public/../application/admin\view\public\header.html";i:1505280616;s:65:"D:\www\lunhui\public/../application/admin\view\public\footer.html";i:1505280616;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\www\lunhui\public/../application/admin\view\member\index.html";i:1510134155;s:65:"D:\www\lunhui\public/../application/admin\view\public\header.html";i:1505280616;s:65:"D:\www\lunhui\public/../application/admin\view\public\footer.html";i:1505280616;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,13 +23,14 @@
     </style>
 </head>
 <style type="text/css">
-         .destop{  
+         .destop1{  
                 cursor: pointer;  
-                transition: all 0.6s;  
-            }  
-            .destop:hover{  
-                transform: scale(4);  
-            }  
+                transition: all 0.6s;
+                width:140px;
+                height:140px;
+            }
+
+           
 </style>
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -62,13 +63,13 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr class="long-tr">
-                                <th width="4%">ID</th>
-                                <th width="9%">昵称</th>
-                                <th width="5%">性别</th>
-                                <th width="5%">头像</th>
-                                <th width="5%">专属桌面</th>
-                                <th width="5%">专属码</th>
-                                <th width="5%">操作</th>
+                                <th >ID</th>
+                                <th >昵称</th>
+                                <th >性别</th>
+                                <th >头像</th>
+                                <th >专属桌面</th>
+                                <th >专属码</th>
+                                <th >操作</th>
                             </tr>
                         </thead>
                         <script id="list-template" type="text/html">
@@ -91,8 +92,7 @@
                                 </td>
                                 <td>
                                     {{# if(d[i].photo!=null){ }}
-                                    <img src="{{d[i].photo}}"  style="width:70px;height:70px"  class="destop"/>
-                                       
+                                    <img src="{{d[i].photo}}"    class="destop1" onclick="window.open('{{d[i].photo}}');"/>
                                     {{# }else{ }}
                                          暂无
                                     {{# } }}
@@ -193,7 +193,7 @@
 
 //下载 桌面图片
 function downloadfile(id){
-    location.href = './downloadfile/id/'+id+'.html';
+    window.open(" <?php echo url('Home/Arequest/downloadfile'); ?>?id="+id);
 }
 
 
