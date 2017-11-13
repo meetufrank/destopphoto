@@ -15,10 +15,11 @@ html,body{
 	height:100%;
 }  
 body{
-	background:url("http://images.meetv.com.cn/wxphoto/img/4.jpg?imageslim");
+	background:url("http://images.meetv.com.cn/wxphoto/img/beijings.jpg?imageslim") no-repeat center fixed;
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center;
+	overflow:hidden;
 }
 .back-button4{
 	width:50%;
@@ -27,40 +28,17 @@ body{
 	/*color: red;*/
 	position:absolute;
     bottom:2%;
-}
-.next-button41{
-	width: 90%;
-    height:50px;
-    position: absolute;
-    bottom:59%;
-    margin-left: -45%;
-    left:50%;
-    background-color:transparent;
-}
-.next-button42{
-	width: 90%;
-    height:50px;
-    position: absolute;
-    bottom:39%;
-    margin-left: -45%;
-    left:50%;
-    background-color:transparent;
+    z-index: 9999;
 }
 </style>
 </head>
 <body>
+	<div class="container">
+	</div>
 	<div class="back-button4" onClick="BackPage();"></div>
-	<div class="next-button41" onClick="NextPage1();"></div>
-	<div class="next-button42" onClick="NextPage2();"></div>
 	<script type="text/javascript">
 		function BackPage(){
 			window.location.href="{:url('Index/index3')}";
-		}
-		function NextPage1(){
-			window.location.href="{:url('Index/index5')}";
-		}
-		function NextPage2(){
-			window.location.href="{:url('Index/index5s')}";
 		}
 	</script>
         {include file="public/footcommon" /}
