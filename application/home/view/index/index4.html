@@ -6,7 +6,9 @@
 <title>上传选择</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 html,body{
 	margin:0;
@@ -30,10 +32,47 @@ body{
     bottom:2%;
     z-index: 9999;
 }
+.container-four{
+/*	background-color: red;*/
+	margin-top: 30%;
+}
+.container-four-img img{
+	width: 100%;
+	height: 100%;
+}
+.row{
+	margin-top: 5%;
+}
+/*.row div{
+	width: 150px;
+	height: 180px;
+}*/
 </style>
 </head>
 <body>
-	<div class="container">
+	<div class="container container-four">
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk02.jpg">
+			</div>
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk04.jpg">
+			</div>
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk04.jpg">
+			</div>
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk02.jpg">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 container-four-img">
+				<img src="__UPLOAD__/img/hk05.jpg">
+			</div>
+			<div class="col-xs-6 col-sm-6 container-four-img">
+				<img src="__UPLOAD__/img/hk06.jpg">
+			</div>
+		</div>
 	</div>
 	<div class="back-button4" onClick="BackPage();"></div>
 	<script type="text/javascript">
