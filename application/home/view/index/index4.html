@@ -6,7 +6,9 @@
 <title>上传选择</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 html,body{
 	margin:0;
@@ -15,10 +17,11 @@ html,body{
 	height:100%;
 }  
 body{
-	background:url("http://images.meetv.com.cn/wxphoto/img/4.jpg?imageslim");
+	background:url("http://images.meetv.com.cn/wxphoto/img/beijings.jpg?imageslim") no-repeat center fixed;
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center;
+	overflow:hidden;
 }
 .back-button4{
 	width:50%;
@@ -27,42 +30,65 @@ body{
 	/*color: red;*/
 	position:absolute;
     bottom:2%;
+    z-index: 9999;
 }
-.next-button41{
-	width: 90%;
-    height:50px;
-    position: absolute;
-    bottom:59%;
-    margin-left: -45%;
-    left:50%;
-    background-color:transparent;
+.container-four{
+/*	background-color: red;*/
+	margin-top:45%;
 }
-.next-button42{
-	width: 90%;
-    height:50px;
-    position: absolute;
-    bottom:39%;
-    margin-left: -45%;
-    left:50%;
-    background-color:transparent;
+.container-four-img img{
+	width: 100%;
+	height: 100%;
 }
+.row{
+	margin-top: 5%;
+}
+p{
+	color: white;
+	text-align: center;
+	font-size: 18px;
+	margin-top:18px;
+}
+/*.row div{
+	width: 150px;
+	height: 180px;
+}*/
 </style>
 </head>
 <body>
+	<div class="container container-four">
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk01.jpg" onclick="NextPage();">
+			</div>
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk02.jpg" onclick="NextPage();">
+			</div>
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk03.jpg" onclick="NextPage();">
+			</div>
+			<div class="col-xs-3 col-sm-3 container-four-img">
+				<img src="__UPLOAD__/img/hk04.jpg" onclick="NextPage();">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 container-four-img">
+				<img src="__UPLOAD__/img/hk05.jpg" onclick="NextPage();">
+			</div>
+			<div class="col-xs-6 col-sm-6 container-four-img">
+				<img src="__UPLOAD__/img/hk06.jpg" onclick="NextPage();">
+			</div>
+		</div>
+		<p>*点击你喜欢的边框开始上传图片*</p>
+	</div>
 	<div class="back-button4" onClick="BackPage();"></div>
-	<div class="next-button41" onClick="NextPage1();"></div>
-	<div class="next-button42" onClick="NextPage2();"></div>
 	<script type="text/javascript">
 		function BackPage(){
 			window.location.href="{:url('Index/index3')}";
 		}
-		function NextPage1(){
-			window.location.href="{:url('Index/index5')}";
-		}
-		function NextPage2(){
-			window.location.href="{:url('Index/index5s')}";
+		function NextPage(){
+			window.location.href="{:url('Index/cropper')}";
 		}
 	</script>
-        {include file="public/footcommon" /}
 </body>
 </html>
