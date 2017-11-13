@@ -17,31 +17,86 @@ html,body{
 	height:100%;
 }  
 body{
-	background:url("http://images.meetv.com.cn/wxphoto/img/beijings.jpg?imageslim") no-repeat center fixed;
+	background:url("http://images.meetv.com.cn/wxphoto/img/beijings.jpg?imageslim");
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center;
-	overflow:hidden;
+	overflow: hidden;
 }
-.container-eight{
-	/*background-color: red;*/
-	margin-top:30%;
+.contain{ 
+	width:75%;
+    height:65%;
+	margin: 0 auto;
+	text-align:center;
+	margin-top:25%;
+}   
+.inner_contain{ 
+	height: 100%;
+	/*text-align:center;
+	padding:10px 20px 10px 20px;*/
+	background:url("__UPLOAD__/img/bg07.jpg");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+
 }
-.img-box{
-	/*border:1px solid white;*/
+.inner_contains{ 
+	margin-top:2%;
 }
-.img-box img{
+.inner_contains img{
+	width: 100%;
+	height: 100%;
+}
+.bottom-button{
+	position: absolute;
+    text-align: center;
+    margin-top: 5px;
+    width: 100%;
+    bottom:10%;
+}
+.contain-s{
 	width:100%;
+    height:45%;
+/*	border: 1px solid white;*/
+	margin: 0 auto;
+	margin-top:25%; 
+}
+.contain-s img{
+	width: 100%;
+}
+.contain-main{
+	height: 100%;
+	background:url("__UPLOAD__/img/bg04.jpg");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+.contain-main-s{ 
+	margin-top:2%;
+}
+.contain-main-s img{
+	width: 100%;
+	height: 100%;
 }
 </style>
 </head>
 <body>
-	<div class="container container-eight">
-		<div class="img-box col-xs-12">
-			<img class="col-xs-12" src="__UPLOAD__/img/VCG41186461942.jpg">
-		</div>
+	<!-- 长背景图 -->
+<div class="contain">  
+    <div class="inner_contain col-xs-12">
+    	<div class="inner_contains"> 
+    		<img src="__UPLOAD__/img/VCG41186461942.jpg">
+    	</div> 
+    </div>  
+</div>
+<div class="bottom-button">
+	<button class="btn btn-primary">确认上传</button>
+</div>
+<!-- 宽背景图长 -->
+<div class="contain-s">  
+	<div class="contain-main col-xs-12"  style="display: none;">
+		<div class="contain-main-s"> 
+    		<img src="__UPLOAD__/img/VCG41545799559 (1).jpg">
+    	</div> 
 	</div>
-	<script type="text/javascript">
-	</script>
+</div>
 </body>
 </html>
