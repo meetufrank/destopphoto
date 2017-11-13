@@ -34,7 +34,7 @@ body{
 }
 .container-four{
 /*	background-color: red;*/
-	margin-top: 30%;
+	margin-top:45%;
 }
 .container-four-img img{
 	width: 100%;
@@ -42,6 +42,12 @@ body{
 }
 .row{
 	margin-top: 5%;
+}
+p{
+	color: white;
+	text-align: center;
+	font-size: 18px;
+	margin-top:18px;
 }
 /*.row div{
 	width: 150px;
@@ -53,33 +59,36 @@ body{
 	<div class="container container-four">
 		<div class="row">
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk02.jpg">
+				<img src="__UPLOAD__/img/hk01.jpg" onclick="NextPage();">
 			</div>
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk04.jpg">
+				<img src="__UPLOAD__/img/hk02.jpg" onclick="NextPage();">
 			</div>
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk04.jpg">
+				<img src="__UPLOAD__/img/hk03.jpg" onclick="NextPage();">
 			</div>
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk02.jpg">
+				<img src="__UPLOAD__/img/hk04.jpg" onclick="NextPage();">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 container-four-img">
-				<img src="__UPLOAD__/img/hk05.jpg">
+				<img src="__UPLOAD__/img/hk05.jpg" onclick="NextPage();">
 			</div>
 			<div class="col-xs-6 col-sm-6 container-four-img">
-				<img src="__UPLOAD__/img/hk06.jpg">
+				<img src="__UPLOAD__/img/hk06.jpg" onclick="NextPage();">
 			</div>
 		</div>
+		<p>*点击你喜欢的边框开始上传图片*</p>
 	</div>
 	<div class="back-button4" onClick="BackPage();"></div>
 	<script type="text/javascript">
 		function BackPage(){
 			window.location.href="{:url('Index/index3')}";
 		}
+		function NextPage(){
+			window.location.href="{:url('Index/cropper')}";
+		}
 	</script>
-        {include file="public/footcommon" /}
 </body>
 </html>
