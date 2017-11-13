@@ -264,7 +264,6 @@ body{
             </span>
           </button> -->
         </div>
-
         <!-- Show the cropped image in modal -->
         <div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
           <div class="modal-dialog">
@@ -278,7 +277,8 @@ body{
               <div class="modal-body"></div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                <a class="btn btn-primary" id="download" href="javascript:void(0);" download="cropped.jpg">下载</a>
+                <!-- <a class="btn btn-primary" id="download" href="javascript:void(0);" download="cropped.jpg">下载</a> -->
+                <a class="btn btn-primary" id="download" href="#">确定</a>
               </div>
             </div>
           </div>
@@ -536,6 +536,11 @@ body{
 
       </div> --><!-- /.docs-toggles -->
     </div>
+    <button type="button" class="btn btn-primary">
+         <span class="docs-tooltip" onclick="backpage();">
+           返回上页
+         </span>
+    </button>
   </div>
 
   <!-- Footer -->
@@ -561,5 +566,10 @@ body{
   <script src="__UPLOAD__/js/common.js"></script>
   <script src="__UPLOAD__/js/cropper.js"></script>
   <script src="__UPLOAD__/js/main.js"></script>
+  <script>
+    function backpage(){
+      window.location.href="{:url('Index/index4')}";
+    }
+  </script>
 </body>
 </html>

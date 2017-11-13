@@ -63,7 +63,11 @@ class Index extends Base
       return $this->fetch();
     }
     
+    public function index8(){
+
+    }
     
-
-
+    public function index9(){
+      
+    }
 }
