@@ -278,7 +278,7 @@ body{
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
                 <!-- <a class="btn btn-primary" id="download" href="javascript:void(0);" download="cropped.jpg">下载</a> -->
-                <a class="btn btn-primary" id="download" href="#">确定</a>
+                <a class="btn btn-primary" id="download" onclick="nextpage();">确定</a>
               </div>
             </div>
           </div>
@@ -569,6 +569,9 @@ body{
   <script>
     function backpage(){
       window.location.href="{:url('Index/index4')}";
+    }
+    function nextpage(){
+      window.location.href="{:url('Index/index8')}";
     }
   </script>
 </body>
