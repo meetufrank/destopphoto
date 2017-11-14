@@ -26,9 +26,15 @@ class Index extends Base
       return $this->fetch();
     }
 
-    public function cropper($id){
-        
+    public function cropper(){
+        if(isset($_GET['id'])){
+          $id=  $_GET['id'];
+        }else{
+            $id= Cookie::get('iddata');
+        }
+       
         if($id){
+            Cookie::set('iddata',$id);
             $viewpath= config('view_replace_str');
           $arr=[
             '1'=>$viewpath['__UPLOAD__'].'/img/bg01.jpg',
@@ -51,6 +57,7 @@ class Index extends Base
        
          
         }else{
+
             if(!Cookie::has('bgimg')){
                 $this->redirect(url('Index/index4'));
                 exit;
