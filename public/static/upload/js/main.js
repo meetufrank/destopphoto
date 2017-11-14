@@ -176,6 +176,8 @@ $(function () {
 
             if (!$download.hasClass('disabled')) {
               $download.attr('href', result.toDataURL(uploadedImageType));
+            }else{
+               $download.attr('href', result.toDataURL(uploadedImageType)); 
             }
           }
 
