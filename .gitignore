@@ -1,6 +1,0 @@
-.idea
-composer.lock
-*.log
-uploads
-/public/ueditor
-/application/home/controller/Base.php
