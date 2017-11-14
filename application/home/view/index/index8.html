@@ -17,7 +17,7 @@ html,body{
 	height:100%;
 }  
 body{
-	background:url("http://images.meetv.com.cn/wxphoto/img/beijings.jpg?imageslim");
+	background:url("__UPLOAD__/img/hkbg01.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center;
@@ -93,6 +93,7 @@ body{
 </div>
 <div class="bottom-button">
 	<button class="btn btn-primary mybutton" onclick="nextpage();">确认上传</button>
+	<button class="btn btn-primary mybutton" onclick="backpage();">返回</button>
 </div>
 <!-- 宽背景图长 -->
 <div class="contain-s">  
@@ -105,6 +106,9 @@ body{
 <script>
 	function nextpage(){
 		window.location.href="{:url('Index/index9')}";
+	}
+	function backpage(){
+		window.location.href="{:url('Index/cropper')}";
 	}
 </script>
 </body>
