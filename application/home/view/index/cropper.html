@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="__UPLOAD__/css/bootstrap-cropper.min.css">
   <link rel="stylesheet" href="__UPLOAD__/css/cropper.css">
   <link rel="stylesheet" href="__UPLOAD__/css/main.css">
+  <script src="__UPLOAD__/js/jquery.js"></script>
 </head>
 <style>
 html,body{
@@ -246,7 +247,7 @@ body{
           </button> -->
           <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
             <!-- <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff"> -->
-            <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+            <input type="file" class="sr-only  js_file" id="inputImage" name="file" accept="image/*">
             <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-upload"></span>选择照片
             </span>
@@ -578,18 +579,32 @@ body{
   </footer> -->
 
   <!-- Scripts -->
-  <script src="__UPLOAD__/js/jquery-3.2.1.slim.min.js"></script>
+<!--  <script src="__UPLOAD__/js/jquery-3.2.1.slim.min.js"></script>-->
   <script src="__UPLOAD__/js/popper.min.js"></script>
   <script src="__UPLOAD__/js/bootstrap-cropper.min.js"></script>
   <script src="__UPLOAD__/js/common.js"></script>
   <script src="__UPLOAD__/js/cropper.js"></script>
-  <script src="__UPLOAD__/js/main.js"></script>
+  <script src="__UPLOAD__/js/main.js"></script>>
   <script>
     function backpage(){
       window.location.href="{:url('Index/index4')}";
     }
     function nextpage(){
-      window.location.href="{:url('Index/index8')}";
+        var data=$('#download').attr("href");
+       
+     $.ajax({
+              url:"{:url(\'upload/uploadphoto\')}",
+              data:{data},
+              dataType:'json',
+              type:'post',
+              success:function(re){
+                  
+                  window.location.href="{:url('Index/index8')}";                      
+                 }
+               });
+    
+
+     // window.location.href="{:url('Index/index8')}";
     }
   </script>
 </body>

@@ -60,24 +60,24 @@ p{
 	<div class="container container-four">
 		<div class="row">
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk01.jpg" onclick="NextPage();">
+				<img src="__UPLOAD__/img/hk01.jpg" onclick="NextPage(1);">
 			</div>
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk02.jpg" onclick="NextPage();">
+				<img src="__UPLOAD__/img/hk02.jpg" onclick="NextPage(2);">
 			</div>
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk03.jpg" onclick="NextPage();">
+				<img src="__UPLOAD__/img/hk03.jpg" onclick="NextPage(3);">
 			</div>
 			<div class="col-xs-3 col-sm-3 container-four-img">
-				<img src="__UPLOAD__/img/hk04.jpg" onclick="NextPage();">
+				<img src="__UPLOAD__/img/hk04.jpg" onclick="NextPage(4);">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 container-four-img">
-				<img src="__UPLOAD__/img/hk05.jpg" onclick="NextPage();">
+				<img src="__UPLOAD__/img/hk05.jpg" onclick="NextPage(5);">
 			</div>
 			<div class="col-xs-6 col-sm-6 container-four-img">
-				<img src="__UPLOAD__/img/hk06.jpg" onclick="NextPage();">
+				<img src="__UPLOAD__/img/hk06.jpg" onclick="NextPage(6);">
 			</div>
 		</div>
 		<p>*点击你喜欢的边框开始上传图片*</p>
@@ -87,8 +87,8 @@ p{
 		function BackPage(){
 			window.location.href="{:url('Index/index3')}";
 		}
-		function NextPage(){
-			window.location.href="{:url('Index/cropper')}";
+		function NextPage(id){
+			window.location.href="{:url('Index/cropper')}?id="+id;
 		}
 	</script>
 </body>

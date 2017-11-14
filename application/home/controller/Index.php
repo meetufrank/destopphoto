@@ -26,12 +26,50 @@ class Index extends Base
       return $this->fetch();
     }
 
-    public function cropper(){
-
-      return $this->fetch();
+    public function cropper($id){
+        
+        if($id){
+            $viewpath= config('view_replace_str');
+          $arr=[
+            '1'=>$viewpath['__UPLOAD__'].'/img/bg01.jpg',
+            '2'=>$viewpath['__UPLOAD__'].'/img/bg07.jpg',
+            '3'=>$viewpath['__UPLOAD__'].'/img/bg05.jpg',
+            '4'=>$viewpath['__UPLOAD__'].'/img/bg06.jpg',
+            '5'=>$viewpath['__UPLOAD__'].'/img/bg03.jpg',
+            '6'=>$viewpath['__UPLOAD__'].'/img/bg04.jpg',
+              
+              
+          ];
+          if($arr[$id]!=''){
+             Cookie::set('bgimg',$arr[$id],3600);
+             
+          }else{
+              echo '非法操作';
+              exit;
+          }
+          
+       
+         
+        }else{
+            if(!Cookie::has('bgimg')){
+                $this->redirect(url('Index/index4'));
+                exit;
+            }
+        }
+     return $this->fetch();
+      
     }
 
     public function index8(){
+       
+        if(cookie::has('imgurl')&&cookie::has('bgimg')){
+            $this->assign('imgurl',cookie::get('imgurl')); //前置图片
+            $this->assign('bgimg',cookie::get('bgimg'));//背景图片 
+        }else{
+            $this->redirect(url('Index/index4'));
+            exit;
+        }
+       
       return $this->fetch();
     }
     
