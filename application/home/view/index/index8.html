@@ -23,6 +23,10 @@ body{
 	background-position:center;
 	overflow: hidden;
 }
+.mybutton{
+	background-color: transparent;
+    border: 2px solid white;
+}
 .contain{ 
 	width:75%;
     height:65%;
@@ -88,7 +92,7 @@ body{
     </div>  
 </div>
 <div class="bottom-button">
-	<button class="btn btn-primary">确认上传</button>
+	<button class="btn btn-primary mybutton" onclick="nextpage();">确认上传</button>
 </div>
 <!-- 宽背景图长 -->
 <div class="contain-s">  
@@ -98,5 +102,10 @@ body{
     	</div> 
 	</div>
 </div>
+<script>
+	function nextpage(){
+		window.location.href="{:url('Index/index9')}";
+	}
+</script>
 </body>
 </html>
