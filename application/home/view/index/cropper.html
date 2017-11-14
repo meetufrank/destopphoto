@@ -127,7 +127,7 @@ body{
       </div> -->
     </div>
     <div class="row">
-      <div class="col-md-9 docs-buttons">
+      <div class="col-md-9 docs-buttons" style="text-align: center;">
         <!-- <h3>Toolbar:</h3> -->
 <!--         <div class="btn-group">
           <button type="button" class="btn btn-primary" data-method="setDragMode" data-option="move" title="Move">
@@ -142,47 +142,47 @@ body{
           </button>
         </div> -->
 
-        <div class="btn-group">
+       <!--  <div class="btn-group">
           <button type="button" class="btn btn-primary" data-method="zoom" data-option="0.1" title="Zoom In">
-            <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;zoom&quot;, 0.1)"> -->
+            
               <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-search-plus"></span>
             </span>
           </button>
           <button type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1" title="Zoom Out">
-            <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;zoom&quot;, -0.1)"> -->
+            
               <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-search-minus"></span>
             </span>
           </button>
-        </div>
+        </div> -->
 
-        <div class="btn-group">
+        <!-- <div class="btn-group">
           <button type="button" class="btn btn-primary" data-method="move" data-option="-10" data-second-option="0" title="Move Left">
-            <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;move&quot;, -10, 0)"> -->
+            
               <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-arrow-left"></span>
             </span>
           </button>
           <button type="button" class="btn btn-primary" data-method="move" data-option="10" data-second-option="0" title="Move Right">
-            <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;move&quot;, 10, 0)"> -->
+           
               <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-arrow-right"></span>
             </span>
           </button>
           <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
-            <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;move&quot;, 0, -10)"> -->
+            
               <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-arrow-up"></span>
             </span>
           </button>
           <button type="button" class="btn btn-primary" data-method="move" data-option="0" data-second-option="10" title="Move Down">
-            <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;move&quot;, 0, 10)"> -->
+            
               <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
               <span class="fa fa-arrow-down"></span>
             </span>
           </button>
-        </div>
+        </div> -->
 <!-- 
         <div class="btn-group">
           <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45" title="Rotate Left">
@@ -246,7 +246,7 @@ body{
             <!-- <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff"> -->
             <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
             <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="">
-              <span class="fa fa-upload"></span>上传图片
+              <span class="fa fa-upload"></span>选择照片
             </span>
           </label>
           <!-- <button type="button" class="btn btn-primary" data-method="destroy" title="Destroy">
@@ -256,13 +256,13 @@ body{
           </button>
         </div>
 
-        <div class="btn-group btn-group-crop">
+        <div class="btn-group">
           <button type="button" class="btn btn-success" data-method="getCroppedCanvas" data-option="{ &quot;maxWidth&quot;: 4096, &quot;maxHeight&quot;: 4096 }">
             <!-- <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;getCroppedCanvas&quot;, { maxWidth: 4096, maxHeight: 4096 })">
               Get Cropped Canvas
             </span> -->
             <span class="docs-tooltip" data-toggle="tooltip" data-animation="false">
-              上传我的截图
+              上传图片
             </span>
           </button>
           <!-- <button type="button" class="btn btn-success" data-method="getCroppedCanvas" data-option="{ &quot;width&quot;: 160, &quot;height&quot;: 90 }">
@@ -297,6 +297,13 @@ body{
           </div>
         </div><!-- /.modal -->
 
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">
+           <span class="docs-tooltip" onclick="backpage();">
+             返回上页
+           </span>
+          </button>
+        </div>
         <!-- <button type="button" class="btn btn-secondary" data-method="getData" data-option data-target="#putData">
           <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;getData&quot;)">
             Get Data
@@ -549,11 +556,7 @@ body{
 
       </div> --><!-- /.docs-toggles -->
     </div>
-    <button type="button" class="btn btn-primary">
-         <span class="docs-tooltip" onclick="backpage();">
-           返回上页
-         </span>
-    </button>
+
   </div>
 
   <!-- Footer -->
