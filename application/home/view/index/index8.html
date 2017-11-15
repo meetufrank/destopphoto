@@ -166,16 +166,20 @@ body{
         var bg= $("#bginfo");
         
         var imgs=$("#imginfo img");
+        var bt=parseInt($("#imginfo").css('margin-top'));
+        var bl=parseInt($("#imginfo").css('margin-left'));
         var pl=parseInt(imgs.css('padding-left'));
+        var pt=parseInt(imgs.css('padding-top'));
         var bgwidth=bg.outerWidth();
         var bgheight=bg.outerHeight();
         var width=imgs.width();
         var height=imgs.height();
-        var y=imgs.position().top;
-        var x=imgs.position().left+pl;
+        var y=imgs.position().top+pt+bt;
+        var x=imgs.position().left+pl+bl;
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
         
+
          $.ajax({
               url:"{:url(\'Index/makeimg\')}",
               data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
