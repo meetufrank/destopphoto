@@ -37,18 +37,43 @@ class Index extends Base
             Cookie::set('iddata',$id);
             $viewpath= config('view_replace_str');
           $arr=[
-            '1'=>$viewpath['__UPLOAD__'].'/img/bg01.jpg',
-            '2'=>$viewpath['__UPLOAD__'].'/img/bg07.jpg',
-            '3'=>$viewpath['__UPLOAD__'].'/img/bg05.jpg',
-            '4'=>$viewpath['__UPLOAD__'].'/img/bg06.jpg',
-            '5'=>$viewpath['__UPLOAD__'].'/img/bg03.jpg',
-            '6'=>$viewpath['__UPLOAD__'].'/img/bg04.jpg',
+            '1'=>
+              [
+                  'type'=>1,
+                  'url'=>$viewpath['__UPLOAD__'].'/img/bg01.jpg'
+                  ],
+              '2'=>
+              [
+                  'type'=>1,
+                  'url'=>$viewpath['__UPLOAD__'].'/img/bg07.jpg'
+                  ],
+              '3'=>
+              [
+                  'type'=>1,
+                  'url'=>$viewpath['__UPLOAD__'].'/img/bg05.jpg'
+                  ],
+              '4'=>
+              [
+                  'type'=>1,
+                  'url'=>$viewpath['__UPLOAD__'].'/img/bg06.jpg'
+                  ],
+              '5'=>
+              [
+                  'type'=>2,
+                  'url'=>$viewpath['__UPLOAD__'].'/img/bg03.jpg'
+                  ],
+              '6'=>
+              [
+                  'type'=>2,
+                  'url'=>$viewpath['__UPLOAD__'].'/img/bg04.jpg'
+                  ]
+          
               
               
           ];
-          if($arr[$id]!=''){
-             Cookie::set('bgimg',$arr[$id],3600);
-             
+          if($arr[$id]['url']!=''){
+             Cookie::set('bgimg',$arr[$id]['url'],3600);
+             Cookie::set('bgtype',$arr[$id]['type'],3600);
           }else{
               echo '非法操作';
               exit;
@@ -69,8 +94,9 @@ class Index extends Base
 
     public function index8(){
        
-        if(cookie::has('imgurl')&&cookie::has('bgimg')){
+        if(cookie::has('imgurl')&&cookie::has('bgimg')&&cookie::has('bgtype')){
             $this->assign('imgurl',cookie::get('imgurl')); //前置图片
+            $this->assign('bgtype',cookie::get('bgtype')); //前置图片
             $this->assign('bgimg',cookie::get('bgimg'));//背景图片 
         }else{
             $this->redirect(url('Index/index4'));

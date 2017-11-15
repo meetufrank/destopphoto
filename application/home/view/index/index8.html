@@ -83,6 +83,7 @@ body{
 </style>
 </head>
 <body>
+    {if condition="$bgtype eq 1"}
 	<!-- 长背景图 -->
 <div class="contain">  
     <div class="inner_contain col-xs-12">
@@ -91,18 +92,21 @@ body{
     	</div> 
     </div>  
 </div>
+        {/if}
 <div class="bottom-button">
 	<button class="btn btn-primary mybutton" onclick="nextpage();">确认上传</button>
 	<button class="btn btn-primary mybutton" onclick="backpage();">返回</button>
 </div>
+         {if condition="$bgtype eq 2"}
 <!-- 宽背景图长 -->
 <div class="contain-s">  
-	<div class="contain-main col-xs-12"  style="display: none;">
+	<div class="contain-main col-xs-12" >
 		<div class="contain-main-s"> 
     		<img src="{$imgurl}">
     	</div> 
 	</div>
 </div>
+{/if}
 <script>
 	function nextpage(){
 		window.location.href="{:url('Index/index9')}";
