@@ -253,8 +253,8 @@ $(function () {
         file = files[0];
 
         if (/^image\/\w+$/.test(file.type)) {
-          uploadedImageType = file.type;
-
+          // uploadedImageType = file.type;
+          uploadedImageType = 'image/jpeg';
           if (uploadedImageURL) {
             URL.revokeObjectURL(uploadedImageURL);
           }
