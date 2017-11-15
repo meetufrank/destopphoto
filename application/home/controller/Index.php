@@ -59,7 +59,7 @@ class Index extends Base
                   ],
               '5'=>
               [
-                  'type'=>2,
+                  'type'=>3,
                   'url'=>$viewpath['__UPLOAD__'].'/img/bg03.jpg'
                   ],
               '6'=>
