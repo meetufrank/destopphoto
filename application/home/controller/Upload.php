@@ -3,6 +3,8 @@ namespace app\home\controller;
 use think\Db;
 use think\Controller;
 use think\Cookie;
+
+
 class Upload extends controller
 {
 
@@ -52,6 +54,9 @@ class Upload extends controller
         echo json_encode($msg);
         exit;
     }
+    
+    
+ 
     //返回当前的毫秒时间戳
         function msectime() {
            list($msec, $sec) = explode(' ', microtime());
