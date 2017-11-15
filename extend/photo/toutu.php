@@ -89,7 +89,6 @@ ob_clean(); // --清空（擦掉）输出缓冲区
    
     imagejpeg($image_3, ROOT_PATH.'public'.'/uploads/photo/'."$timestamp0.jpg"); 
     imagedestroy($image_3);
-     unlink($pic2name);
     unlink($picname);
    
    return '/uploads/photo/'.$timestamp0.'.jpg';

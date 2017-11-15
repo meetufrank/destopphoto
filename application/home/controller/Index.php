@@ -108,9 +108,7 @@ class Index extends Base
       return $this->fetch();
     }
     
-    public function index9(){
-      return $this->fetch();
-    }
+
 
     public function index5(){
 
@@ -128,22 +126,22 @@ class Index extends Base
       return $this->fetch();
     }
 
-    public function index7(){
-      
-        //查询该用户的专属码
-        $map=[
-          'openid'=>Cookie::get('openid')
-           ];
-          $member=new MemberModel();
-            $user=$member->where($map)->find();
-            if($user['unicount']){
-                $this->assign('unicount',$user['unicount']);
-            }else{
-                 header("Location:".url('Index/index'));
-                 exit;
-            }
-      return $this->fetch();
-    }
+//    public function index7(){
+//      
+//        //查询该用户的专属码
+//        $map=[
+//          'openid'=>Cookie::get('openid')
+//           ];
+//          $member=new MemberModel();
+//            $user=$member->where($map)->find();
+//            if($user['unicount']){
+//                $this->assign('unicount',$user['unicount']);
+//            }else{
+//                 header("Location:".url('Index/index'));
+//                 exit;
+//            }
+//      return $this->fetch();
+//    }
        public function makeimg() {
         if(Request::instance()->isAjax()){
             
@@ -166,6 +164,74 @@ class Index extends Base
             ]
         ];
         $photourl=$photo->makeimg($data);
+        //生成专属码
+         if(Cookie::has('openid')){
+            
+        
+         $member=new MemberModel();
+        
+         $where=[
+             'openid'=> cookie::get('openid')
+                 ];
+         if($photourl){
+            
+             $user=$member->where($where)->find();
+                
+          if(empty($user['unicount'])){
+               //生成专属码
+             $num=time();
+             $num=substr($num,-6);
+             while(true){
+                 $map=[
+                   'openid'=> cookie::get('openid'),
+                    'unicount'=>$num
+                 ];
+                $count=$member->getAllCount($map);
+                if($count){
+                    $num++;
+                }else{
+                    break;
+                }
+             }
+           
+           $data=[
+             'photo'=>$photourl,
+              'unicount'=>$num
+            ]; 
+          }else{
+              
+              $data=[
+             'photo'=>$photourl,
+            ]; 
+          }
+            $member->save($data,$where);
+            echo json_encode(['code'=>1,'msg'=>'上传成功']);
+                    exit;
+         }else{
+             echo json_encode(['code'=>0,'msg'=>'专属桌面异常，请重新生成专属桌面']);
+                   exit;
+         }
+         
+        }else{
+            echo json_encode(['code'=>1,'msg'=>'请登录']);
         }
+        }
+    }
+        public function index9(){
+      
+        //查询该用户的专属码和专属桌面
+        $map=[
+          'openid'=>Cookie::get('openid')
+           ];
+          $member=new MemberModel();
+            $user=$member->where($map)->find();
+            if($user['unicount']){
+                $this->assign('unicount',$user['unicount']);
+                $this->assign('destopimg',$user['photo']);
+            }else{
+                 header("Location:".url('Index/index'));
+                 exit;
+            }
+      return $this->fetch();
     }
 }

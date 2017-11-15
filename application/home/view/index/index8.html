@@ -180,9 +180,17 @@ body{
               url:"{:url(\'Index/makeimg\')}",
               data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
               dataType:'json',
-              success:function(){
+              success:function(re){
+                  if(re){
+                      
                   
-                  window.location.href="{:url('Index/index9')}";                      
+                  if(re.code==1){
+                    window.location.href="{:url('Index/index9')}";      
+                  }else{
+                      alert(re.msg);
+                  }
+                                    
+                 }
                  }
                });
         
