@@ -86,22 +86,22 @@ body{
     {if condition="$bgtype eq 1"}
 	<!-- 长背景图 -->
 <div class="contain">  
-    <div class="inner_contain col-xs-12">
-    	<div class="inner_contains"> 
+    <div class="inner_contain col-xs-12" id="bginfo">
+    	<div class="inner_contains" id="imginfo"> 
     		<img src="{$imgurl}">
     	</div> 
     </div>  
 </div>
         {/if}
 <div class="bottom-button">
-	<button class="btn btn-primary mybutton" onclick="nextpage();">确认上传</button>
+	<button class="btn btn-primary mybutton" onclick="upload();">确认上传</button>
 	<button class="btn btn-primary mybutton" onclick="backpage();">返回</button>
 </div>
          {if condition="$bgtype eq 2"}
 <!-- 宽背景图长 -->
 <div class="contain-s">  
-	<div class="contain-main col-xs-12" >
-		<div class="contain-main-s"> 
+	<div class="contain-main col-xs-12" id="bginfo">
+		<div class="contain-main-s" id="imginfo"> 
     		<img src="{$imgurl}">
     	</div> 
 	</div>
@@ -114,6 +114,12 @@ body{
 	function backpage(){
 		window.location.href="{:url('Index/cropper')}";
 	}
+     function upload(){
+        var bg= $("#bginfo");;
+        var bgwidth=bg.outerWidth();
+        var bgheight=bg.outerHeight();
+      
+     }
 </script>
 </body>
 </html>
