@@ -4,6 +4,8 @@ use app\home\model\IndexModel;
 use think\Db;
 use think\Cookie;
 use app\admin\model\MemberModel;
+use think\Request;
+use photo\toutu;
 class Index extends Base
 {
 	public function index(){
@@ -141,5 +143,29 @@ class Index extends Base
                  exit;
             }
       return $this->fetch();
+    }
+       public function makeimg() {
+        if(Request::instance()->isAjax()){
+            
+        $param=Request::instance()->param();
+        $photo=new toutu();
+        $viewpath= config('view_replace_str');
+        
+        $data=[
+            'bgimg'=>[
+                'url'=>ROOT_PATH.'public'.$param['bgurl'],
+                'width'=>$param['bgwidth'],
+                'height'=>$param['bgheight']
+            ],
+            'img'=>[
+               'url'=>ROOT_PATH.'public'.$param['imgurl'],
+               'width'=>$param['width'],
+               'height'=>$param['height'],
+                'x'=>$param['x'],
+                'y'=>$param['y']
+            ]
+        ];
+        $photourl=$photo->makeimg($data);
+        }
     }
 }
