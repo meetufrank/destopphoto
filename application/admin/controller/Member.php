@@ -5,6 +5,7 @@ use app\admin\model\MemberModel;
 use app\admin\model\MemberGroupModel;
 use think\Db;
 use think\Request;
+use excel\excels;
 class Member extends Base
 {
     //*********************************************会员组*********************************************//
@@ -215,6 +216,84 @@ class Member extends Base
             return json(['code' => 0, 'data' => $flag['data'], 'msg' => '已开启']);
         }
     
+    }
+    
+    
+    /*
+     * 导出excel表格
+     */
+        Public function exportUser(){
+        
+         set_time_limit(0);
+         $where=[
+             'unicount'=>['gt',0]
+         ];
+        $userlist=Db::name('member')->where($where)->select();
+    	 
+    		error_reporting(E_ALL);
+    		date_default_timezone_set('Europe/London');
+                
+                $excels=new excels();
+                $objPHPExcel=$excels->phpexcel();
+                $excels->loaderexcel5(); //加载excel5
+
+                
+    		$title=date("Y-m-d")."专属码用户";
+    		/*设置excel的属性*/
+    		$objPHPExcel->getProperties()->setCreator("admin")//创建人
+    		->setLastModifiedBy("admin")//最后修改人
+    		->setTitle($title)//标题
+    		->setSubject($title)//题目
+    		->setDescription("")//描述
+    		->setKeywords("用户")//关键字
+    		->setCategory("result file");//种类
+    		//set width
+    		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(8);
+    		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
+    		$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(5);
+    		$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
+
+    		//第一行数据
+    		$objPHPExcel->setActiveSheetIndex(0)
+    		->setCellValue('A1', '序号')
+    		->setCellValue('B1', '微信昵称')
+    		->setCellValue('C1','性别')
+    		->setCellValue('D1', '专属码');
+    		  
+                           
+    		
+
+    		foreach($userlist as $k => $v){
+                    
+					$k=$k+1;
+    				$num=$k+1;//数据从第二行开始录入
+
+                         //整理数据
+                         $v['sex']?$v['sex']='男':$v['sex']='女'; 
+                         
+                  
+    			$objPHPExcel->setActiveSheetIndex(0)
+    			//Excel的第A列，uid是你查出数组的键值，下面以此类推
+    			->setCellValue('A'.$num, $num-1)
+    			->setCellValue('B'.$num, $v['nickname'])
+    			->setCellValue('C'.$num, $v['sex'])
+    			->setCellValue('D'.$num, $v['unicount']);
+    			
+
+
+    		}
+                
+    		$objPHPExcel->getActiveSheet()->setTitle('User');
+    		$objPHPExcel->setActiveSheetIndex(0);
+    		ob_end_clean();//清除缓冲区,避免乱码
+    		header('Content-Type: application/vnd.ms-excel');
+    		header('Content-Disposition: attachment;filename="'.$title.'.xls"');
+    		header('Cache-Control: max-age=0');
+    		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+    		$objWriter->save('php://output');
+    		exit;
+
+        
     }
 
 }
