@@ -14,6 +14,7 @@ $(function () {
   var $dataScaleX = $('#dataScaleX');
   var $dataScaleY = $('#dataScaleY');
   var options = {
+        // viewMode:2,
         aspectRatio: 16 / 9,
         preview: '.img-preview',
         crop: function (e) {
@@ -148,7 +149,7 @@ $(function () {
               data.option = {};
             }
 
-            data.option.fillColor = '#fff';
+            data.option.fillColor = 'rgba(0,0,0,0.1)';
           }
 
           break;

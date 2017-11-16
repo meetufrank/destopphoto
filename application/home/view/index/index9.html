@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>边框预览</title>
+<title>预览</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,7 +23,7 @@ body{
 	background-repeat:no-repeat;
 	background-position:center;
 }
-.boxdiv{
+.box{
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
@@ -51,7 +51,7 @@ body{
 }
 .top-code{
 	text-align: center;
-	margin-top:10%; 
+	margin-top:6%; 
 }
 .code-button{
 	color: white;
@@ -64,12 +64,12 @@ body{
 </style>
 </head>
 <body>
-<div class="boxdiv">
+<div class="box">
 <div class="top-code"><button class="btn btn-primary code-button">专属码:{$unicount}</button></div>
 <div class="container my-center col-xs-12">
 	<img class="col-xs-12 center-img" src="{$destopimg}">
 </div>
 <div class="center-text"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>长按图片保存</div>
-</body>
 </div>
+</body>
 </html>

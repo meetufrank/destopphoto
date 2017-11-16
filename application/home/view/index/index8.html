@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>边框预览</title>
+<title>预览</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,6 +21,11 @@ body{
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center;
+	overflow: hidden;
+}
+.box{
+	width:100%;
+	height:100%;
 	overflow: hidden;
 }
 .mybutton{
@@ -47,7 +52,6 @@ body{
 	margin-left:0px;
 	margin-right:0px;   
     width: 100%;
-/*    border: 1px solid red;*/
     height:75%;
 }
 .inner_contains img{
@@ -121,6 +125,7 @@ body{
 </style>
 </head>
 <body>
+<div class="box">
     {if condition="$bgtype eq 1"}
 	<!-- bg01 05 07 07背景图-->
 <div class="contain">  
@@ -155,6 +160,7 @@ body{
 	</div>
 </div>
 {/if}
+</div>
 <script>
 	function nextpage(){
 		window.location.href="{:url('Index/index9')}";
