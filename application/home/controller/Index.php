@@ -90,6 +90,7 @@ class Index extends Base
                 exit;
             }
         }
+    $this->assign('bgtype',cookie::get('bgtype')); //前置图片
      return $this->fetch();
       
     }
