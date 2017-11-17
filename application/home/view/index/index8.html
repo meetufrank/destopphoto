@@ -47,12 +47,12 @@ body{
 
 }
 .inner_contains{ 
-	margin-top:2%;
+	margin-top:5%;
 	margin-bottom:0px;
-	margin-left:0px;
+	margin-left:20px;
 	margin-right:0px;   
-    width: 100%;
-    height:75%;
+    width: 85%;
+  
 }
 .inner_contains img{
 	width: 100%;
@@ -84,15 +84,17 @@ body{
         
 }
 .contain-main-s{ 
-	width:75%;
-    height:70%;
-    margin-top:10%;
+	width:65%;
+    height:60%;
+/*    margin-top:20%;*/
 /*    border: 1px solid white;
     background-color: red;*/
 }
 .contain-main-s img{
 	width: 100%;
 	height: 100%;
+        margin-top: 20%;
+        margin-left: 10px;
 }
 /*hk05做背景样式*/
 .contain-top{
@@ -113,14 +115,16 @@ body{
 .contain-top-main-s{ 
 	width:100%;
     height:65%;
-    margin:2% 0;
+/*    margin:2% 0;*/
     position: relative;
     /*    border: 1px solid white;
     background-color: red;*/
 }
 .contain-top-main-s img{
-	width: 100%;
-	height: 100%;
+	width: 95%;
+	height: 95%;
+        margin-top: 10px;
+        margin-left: 10px;
 }
 </style>
 </head>
@@ -143,9 +147,9 @@ body{
          {if condition="$bgtype eq 2"}
 <!-- bg04宽背景图 -->
 <div class="contain-s">  
-	<div class="contain-main col-xs-12" id="bginfo">
+	<div class="contain-main " id="bginfo">
 		<div class="contain-main-s" id="imginfo"> 
-    		<img src="{$imgurl}" class="col-xs-12">
+    		<img src="{$imgurl}" >
     	</div> 
 	</div>
 </div>
@@ -153,9 +157,9 @@ body{
 {if condition="$bgtype eq 3"}
 <!-- bg03背景图 -->
 <div class="contain-top">  
-	<div class="contain-top-main col-xs-12" id="bginfo">
-		<div class="contain-top-main-s" id="imginfo"> 
-    		<img src="{$imgurl}" class="col-xs-12">
+	<div class="contain-top-main" id="bginfo">
+		<div class="contain-top-main-s" id="imginfo" > 
+    		<img src="{$imgurl}" >
     	</div> 
 	</div>
 </div>
@@ -178,20 +182,18 @@ body{
         var bg= $("#bginfo");
         
         var imgs=$("#imginfo img");
-        var bt=parseInt($("#imginfo").css('margin-top'));
-        var bl=parseInt($("#imginfo").css('margin-left'));
-        var pl=parseInt(imgs.css('padding-left'));
-        var pt=parseInt(imgs.css('padding-top'));
+//        var bt=parseInt($("#imginfo").css('margin-top'));
+//        var bl=parseInt($("#imginfo").css('margin-left'));
+        var pl=parseInt(imgs.css('margin-left'));
+        var pt=parseInt(imgs.css('margin-top'));
         var bgwidth=bg.outerWidth()*2;
         var bgheight=bg.outerHeight()*2;
         var width=imgs.width()*2;
         var height=imgs.height()*2;
-        var y=(imgs.position().top+pt+bt)*2;
-        var x=(imgs.position().left+bl+pl)*2;
+        var y=pt*2;
+        var x=pl*2;
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
-         alert(x);
-         alert(y);
          $.ajax({
               url:"{:url(\'Index/makeimg\')}",
               data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
@@ -214,7 +216,45 @@ body{
      
 </script>
 {/if}
-
+{if condition="$bgtype eq 2"}
+<script>
+     function upload(){
+        var bg= $("#bginfo");
+        
+        var imgs=$("#imginfo img");
+        var pl=parseInt(imgs.css('margin-left'));
+        var pt=parseInt(imgs.css('margin-top'));
+        var bgwidth=bg.outerWidth()*2;
+        var bgheight=bg.outerHeight()*2;
+        var width=imgs.width()*2;
+        var height=imgs.height()*2;
+        var y=pt*2;
+        var x=pl*2;
+    
+        var bgurl='{$bgimg}';
+        var imgurl='{$imgurl}';
+         $.ajax({
+              url:"{:url(\'Index/makeimg\')}",
+              data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
+              dataType:'json',
+              success:function(re){
+                  if(re){
+                      
+                  
+                  if(re.code==1){
+                    window.location.href="{:url('Index/index9')}";      
+                  }else{
+                      alert(re.msg);
+                  }
+                                    
+                 }
+                 }
+               });
+        
+     }
+     
+</script>
+{/if}
 {if condition="$bgtype eq 1"}
 <script>
      function upload(){
@@ -228,7 +268,7 @@ body{
         var width=imgs.width()*2;
         var height=imgs.height()*2;
         var y=(imgs.position().top)*2;
-        var x=(imgs.position().left+bl)*2;
+        var x=(imgs.position().left)*2;
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
          $.ajax({
