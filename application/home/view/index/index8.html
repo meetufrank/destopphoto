@@ -47,16 +47,19 @@ body{
 
 }
 .inner_contains{ 
-	margin-top:5%;
+/*	margin-top:5%;
 	margin-bottom:0px;
 	margin-left:20px;
-	margin-right:0px;   
+	margin-right:0px;   */
     width: 85%;
+    height:75%;
   
 }
 .inner_contains img{
 	width: 100%;
 	height: 100%;
+        margin-top: 5%;
+        margin-left:9%;
 }
 .bottom-button{
 	position: absolute;
@@ -133,7 +136,7 @@ body{
     {if condition="$bgtype eq 1"}
 	<!-- bg01 05 07 07背景图-->
 <div class="contain">  
-    <div class="inner_contain col-xs-12" id="bginfo">
+    <div class="inner_contain " id="bginfo">
     	<div class="inner_contains" id="imginfo"> 
     		<img src="{$imgurl}">
     	</div> 
@@ -262,13 +265,14 @@ body{
         
         var imgs=$("#imginfo img");
        // var bt=parseInt($("#imginfo").css('margin-top'));
-        var bl=parseInt($("#imginfo").css('margin-left'));
+        var bl=parseInt(imgs.css('margin-left'))
+        var bt=parseInt(imgs.css('margin-top'))
         var bgwidth=bg.outerWidth()*2;
         var bgheight=bg.outerHeight()*2;
         var width=imgs.width()*2;
         var height=imgs.height()*2;
-        var y=(imgs.position().top)*2;
-        var x=(imgs.position().left)*2;
+        var y=bt*2;
+        var x=bl*2;
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
          $.ajax({
