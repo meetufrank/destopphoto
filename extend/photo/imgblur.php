@@ -1,5 +1,5 @@
 <?php   
-  
+namespace photo;  
 class image_blur{  
   
 /** 

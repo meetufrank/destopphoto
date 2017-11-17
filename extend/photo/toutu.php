@@ -29,15 +29,18 @@ ob_clean(); // --清空（擦掉）输出缓冲区
 
     $picname=$data['bgimg']['url'];
     //输出图片
-    $timestamp = $this->msectime(); 
+    $timestamp = $this->msectime();
     $this->file2dir($picname, ROOT_PATH.'public/uploads/destop/',$timestamp.'.jpg');
     $picname=ROOT_PATH.'public/uploads/destop/'.$timestamp.'.jpg';
-    $pic2name=$data['img']['url'];
+    $timestamp1 = $this->msectime(); 
+    $this->file2dir($data['img']['url'], ROOT_PATH.'public/uploads/photo/',$timestamp1.'.jpg');
+    $pic2name=ROOT_PATH.'public/uploads/photo/'.$timestamp1.'.jpg';
 
   
 
     //resize($picname,$data['bgimg']['width'],$data['bgimg']['height']);
-     updatesize($picname,$data['bgimg']['width'],$data['bgimg']['height']);
+   // resize($pic2name,$data['img']['width'],$data['img']['height']);
+    updatesize($picname,$data['bgimg']['width'],$data['bgimg']['height']);
     updatesize($pic2name,$data['img']['width'],$data['img']['height']);
  
     $dst_path = $picname;
@@ -90,7 +93,6 @@ ob_clean(); // --清空（擦掉）输出缓冲区
     imagejpeg($image_3, ROOT_PATH.'public'.'/uploads/photo/'."$timestamp0.jpg"); 
     imagedestroy($image_3);
     unlink($picname);
-   
    return '/uploads/photo/'.$timestamp0.'.jpg';
 
 }

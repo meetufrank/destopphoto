@@ -168,6 +168,12 @@ body{
 	function backpage(){
 		window.location.href="{:url('Index/cropper')}";
 	}
+        
+     
+</script>
+
+{if condition="$bgtype eq 3"}
+<script>
      function upload(){
         var bg= $("#bginfo");
         
@@ -176,16 +182,16 @@ body{
         var bl=parseInt($("#imginfo").css('margin-left'));
         var pl=parseInt(imgs.css('padding-left'));
         var pt=parseInt(imgs.css('padding-top'));
-        var bgwidth=bg.outerWidth();
-        var bgheight=bg.outerHeight();
-        var width=imgs.width();
-        var height=imgs.height();
-        var y=imgs.position().top+pt+bt;
-        var x=imgs.position().left+pl+bl;
+        var bgwidth=bg.outerWidth()*2;
+        var bgheight=bg.outerHeight()*2;
+        var width=imgs.width()*2;
+        var height=imgs.height()*2;
+        var y=(imgs.position().top+pt+bt)*2;
+        var x=(imgs.position().left+bl+pl)*2;
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
-        
-
+         alert(x);
+         alert(y);
          $.ajax({
               url:"{:url(\'Index/makeimg\')}",
               data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
@@ -205,6 +211,48 @@ body{
                });
         
      }
+     
 </script>
+{/if}
+
+{if condition="$bgtype eq 1"}
+<script>
+     function upload(){
+        var bg= $("#bginfo");
+        
+        var imgs=$("#imginfo img");
+       // var bt=parseInt($("#imginfo").css('margin-top'));
+        var bl=parseInt($("#imginfo").css('margin-left'));
+        var bgwidth=bg.outerWidth()*2;
+        var bgheight=bg.outerHeight()*2;
+        var width=imgs.width()*2;
+        var height=imgs.height()*2;
+        var y=(imgs.position().top)*2;
+        var x=(imgs.position().left+bl)*2;
+        var bgurl='{$bgimg}';
+        var imgurl='{$imgurl}';
+         $.ajax({
+              url:"{:url(\'Index/makeimg\')}",
+              data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
+              dataType:'json',
+              success:function(re){
+                  if(re){
+                      
+                  
+                  if(re.code==1){
+                    window.location.href="{:url('Index/index9')}";      
+                  }else{
+                      alert(re.msg);
+                  }
+                                    
+                 }
+                 }
+               });
+        
+     }
+     
+</script>
+{/if}
+{include file="public/footcommon" /}
 </body>
 </html>
