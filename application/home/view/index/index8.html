@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js?v=1.0"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 html,body{
@@ -33,7 +33,7 @@ body{
     border: 2px solid white;
 }
 .contain{ 
-	width:75%;
+	width:64.5%;
     height:65%;
 	margin: 0 auto;
 	text-align:center;
@@ -41,7 +41,7 @@ body{
 }   
 .inner_contain{ 
 	height: 100%;
-	background:url("{$bgimg}");
+	background:url("{$bgimg}?v=1.0");
 	background-repeat:no-repeat;
 	background-size:100% 100%;
 
@@ -51,7 +51,7 @@ body{
 	margin-bottom:0px;
 	margin-left:20px;
 	margin-right:0px;   */
-    width: 90%;
+    width: 82%;
     height:75%;
   
 }
@@ -59,7 +59,7 @@ body{
 	width: 100%;
 	height: 100%;
         margin-top: 5%;
-        margin-left:5.5%;
+        margin-left:11%;
 }
 .bottom-button{
 	position: absolute;
@@ -72,7 +72,7 @@ body{
 /*hk06图做背景样式*/
 .contain-s{
 	width:100%;
-    height:45%;
+    height:36%;
 	margin: 0 auto;
 	margin-top:45%; 
 }
@@ -81,23 +81,23 @@ body{
 }
 .contain-main{
 	height: 100%;
-	background:url("{$bgimg}");
+	background:url("{$bgimg}?v=1.0");
 	background-repeat:no-repeat;
 	background-size:100% 100%;
         
 }
 .contain-main-s{ 
 	width:65%;
-    height:60%;
+    height:55%;
 /*    margin-top:20%;*/
 /*    border: 1px solid white;
     background-color: red;*/
 }
 .contain-main-s img{
-	width: 100%;
-	height: 100%;
-        margin-top: 20%;
-        margin-left: 10px;
+	width: 95%;
+	height: 140%;
+        margin-top: 10%;
+        margin-left: 15px;
 }
 /*hk05做背景样式*/
 .contain-top{
@@ -147,7 +147,7 @@ body{
 	<button class="btn btn-primary mybutton" onclick="upload();">确认上传</button>
 	<button class="btn btn-primary mybutton" onclick="backpage();">返回上页</button>
 </div>
-         {if condition="$bgtype eq 2"}
+         {if condition="$bgtype neq 1"}
 <!-- bg04宽背景图 -->
 <div class="contain-s">  
 	<div class="contain-main " id="bginfo">
@@ -157,16 +157,15 @@ body{
 	</div>
 </div>
 {/if}
-{if condition="$bgtype eq 3"}
+
 <!-- bg03背景图 -->
-<div class="contain-top">  
+<!--<div class="contain-top">  
 	<div class="contain-top-main" id="bginfo">
 		<div class="contain-top-main-s" id="imginfo" > 
     		<img src="{$imgurl}" >
     	</div> 
 	</div>
-</div>
-{/if}
+</div>-->
 </div>
 <script>
 	function nextpage(){
@@ -179,47 +178,8 @@ body{
      
 </script>
 
-{if condition="$bgtype eq 3"}
-<script>
-     function upload(){
-        var bg= $("#bginfo");
-        
-        var imgs=$("#imginfo img");
-//        var bt=parseInt($("#imginfo").css('margin-top'));
-//        var bl=parseInt($("#imginfo").css('margin-left'));
-        var pl=parseInt(imgs.css('margin-left'));
-        var pt=parseInt(imgs.css('margin-top'));
-        var bgwidth=bg.outerWidth()*2;
-        var bgheight=bg.outerHeight()*2;
-        var width=imgs.width()*2;
-        var height=imgs.height()*2;
-        var y=pt*2;
-        var x=pl*2;
-        var bgurl='{$bgimg}';
-        var imgurl='{$imgurl}';
-         $.ajax({
-              url:"{:url(\'Index/makeimg\')}",
-              data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},
-              dataType:'json',
-              success:function(re){
-                  if(re){
-                      
-                  
-                  if(re.code==1){
-                    window.location.href="{:url('Index/index9')}";      
-                  }else{
-                      alert(re.msg);
-                  }
-                                    
-                 }
-                 }
-               });
-        
-     }
-     
-</script>
-{/if}
-{if condition="$bgtype eq 2"}
+
+{if condition="$bgtype neq 1"}
 <script>
      function upload(){
         var bg= $("#bginfo");
