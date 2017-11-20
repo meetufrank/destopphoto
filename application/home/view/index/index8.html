@@ -38,7 +38,10 @@ body{
 	margin: 0 auto;
 	text-align:center;
 	margin-top:25%;
-}   
+}
+.topimg{
+  margin-top:6%; 
+} 
 .inner_contain{ 
 	height: 100%;
 	background:url("{$bgimg}?v=1.2");
@@ -87,7 +90,6 @@ body{
 }
 .contain-main-s{ 
 	width:65%;
-/*  border: 1px solid red;*/
   overflow: hidden;
 }
 .contain-main-s img{
@@ -117,11 +119,9 @@ body{
     /*    border: 1px solid white;
     background-color: red;*/
 }
-.contain-top-main-s img{
-	width: 95%;
-	height: 95%;
-        margin-top: 10px;
-        margin-left: 10px;
+.leftimg{
+	width:65%;
+  margin-top:10%; 
 }
 </style>
 </head>
@@ -131,9 +131,9 @@ body{
 	<!-- bg01 05 07 07背景图-->
 <div class="contain">  
     <div class="inner_contain " id="bginfo">
-    	<div class="inner_contains" id="imginfo"> 
-    		<img src="{$imgurl}" class="col-xs-12">
-    	</div> 
+<!--     	<div class="inner_contains" id="imginfo">  -->
+    		<img src="{$imgurl}" class="col-xs-12 topimg">
+<!--     	</div>  -->
     </div>  
 </div>
         {/if}
@@ -145,9 +145,9 @@ body{
 <!-- bg04宽背景图 -->
 <div class="contain-s">  
 	<div class="contain-main " id="bginfo">
-		<div class="contain-main-s" id="imginfo"> 
-    		<img src="{$imgurl}" class="col-xs-12">
-    	</div> 
+<!--  		<div class="contain-main-s" id="imginfo"> -->
+    		<img src="{$imgurl}" class="col-xs-12 leftimg">
+<!--     	</div> -->
 	</div>
 </div>
 {/if}
