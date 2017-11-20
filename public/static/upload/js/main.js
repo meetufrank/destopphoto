@@ -14,7 +14,14 @@ $(function () {
   var $dataScaleX = $('#dataScaleX');
   var $dataScaleY = $('#dataScaleY');
   var options = {
-        // viewMode:2,
+        // viewMode: 1,
+        // dragMode: 'move',
+        // autoCropArea:0.9,
+        // restore: false,
+        // guides: false,
+        // highlight: false,
+        // cropBoxMovable: false,
+        // cropBoxResizable: false,
         //aspectRatio: 16 / 21,
         aspectRatio: window._num_,
         preview: '.img-preview',
