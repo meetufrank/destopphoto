@@ -146,7 +146,7 @@ body{
 <div class="contain-s">  
 	<div class="contain-main " id="bginfo">
 <!--  		<div class="contain-main-s" id="imginfo"> -->
-    		<img src="{$imgurl}" class="col-xs-12 leftimg">
+    		<img src="{$imgurls}" class="col-xs-12 leftimg">
 <!--     	</div> -->
 	</div>
 </div>
@@ -220,7 +220,7 @@ body{
         var x=bl*2;
        
         var bgurl='{$bgimg}';
-        var imgurl='{$imgurl}';
+        var imgurl='{$imgurls}';
          $.ajax({
               url:"{:url(\'Index/makeimg\')}",
               data:{bgwidth:bgwidth,bgheight:bgheight,width:width,height:height,x:x,y:y,bgurl:bgurl,imgurl:imgurl},

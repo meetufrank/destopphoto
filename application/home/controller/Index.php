@@ -98,7 +98,7 @@ class Index extends Base
     public function index8(){
        
         if(cookie::has('imgurl')&&cookie::has('bgimg')&&cookie::has('bgtype')){
-            $this->assign('imgurl',cookie::get('imgurl')); //前置图片
+            $this->assign('imgurls',cookie::get('imgurl')); //前置图片
             $this->assign('bgtype',cookie::get('bgtype')); //前置图片
             $this->assign('bgimg',cookie::get('bgimg'));//背景图片 
         }else{
