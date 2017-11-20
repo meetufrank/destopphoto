@@ -33,8 +33,8 @@ body{
     border: 2px solid white;
 }
 .contain{ 
-	width:64.5%;
-    height:65%;
+	width:70%;
+  height:65%;
 	margin: 0 auto;
 	text-align:center;
 	margin-top:25%;
@@ -50,16 +50,15 @@ body{
 /*	margin-top:5%;
 	margin-bottom:0px;
 	margin-left:20px;
-	margin-right:0px;   */
-    width: 90%;
-    height:75%;
-  
+	margin-right:0px;
+  height:auto; 
+  overflow: hidden;*/
+  width:100%;
 }
 .inner_contains img{
-	width: 100%;
-	height: 100%;
-        margin-top: 7%;
-        margin-left:5.5%;
+/*	width: 100%;
+	height: 100%;*/
+  margin-top: 7%;
 }
 .bottom-button{
 	position: absolute;
@@ -88,21 +87,16 @@ body{
 }
 .contain-main-s{ 
 	width:65%;
-    height:55%;
-/*    margin-top:20%;*/
-/*    border: 1px solid white;
-    background-color: red;*/
+/*  border: 1px solid red;*/
+  overflow: hidden;
 }
 .contain-main-s img{
-	width: 90%;
-	height: 140%;
-        margin-top: 9%;
-        margin-left: 9%;
+  margin-top:10%;
 }
 /*hk05做背景样式*/
 .contain-top{
 	width:100%;
-    height:45%;
+  height:45%;
 	margin: 0 auto;
 	margin-top:45%; 
 }
@@ -138,7 +132,7 @@ body{
 <div class="contain">  
     <div class="inner_contain " id="bginfo">
     	<div class="inner_contains" id="imginfo"> 
-    		<img src="{$imgurl}">
+    		<img src="{$imgurl}" class="col-xs-12">
     	</div> 
     </div>  
 </div>
@@ -152,7 +146,7 @@ body{
 <div class="contain-s">  
 	<div class="contain-main " id="bginfo">
 		<div class="contain-main-s" id="imginfo"> 
-    		<img src="{$imgurl}" >
+    		<img src="{$imgurl}" class="col-xs-12">
     	</div> 
 	</div>
 </div>
