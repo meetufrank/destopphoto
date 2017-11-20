@@ -170,8 +170,8 @@ body{
      function upload(){
         var bg= $("#bginfo");
         
-        var imgs=$("#imginfo");
-        var pl=parseInt(imgs.css('margin-left'));
+        var imgs=$(".leftimg");
+        var pl=parseInt(imgs.css('padding-left'));
         var pt=parseInt(imgs.css('margin-top'));
         var bgwidth=bg.outerWidth()*2;
         var bgheight=bg.outerHeight()*2;
@@ -179,7 +179,6 @@ body{
         var height=imgs.height()*2;
         var y=pt*2;
         var x=pl*2;
-    
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
          $.ajax({
@@ -209,9 +208,9 @@ body{
      function upload(){
         var bg= $("#bginfo");
         
-        var imgs=$("#imginfo img");
+        var imgs=$(".topimg");
        // var bt=parseInt($("#imginfo").css('margin-top'));
-        var bl=parseInt(imgs.css('margin-left'))
+        var bl=parseInt(imgs.css('padding-left'))
         var bt=parseInt(imgs.css('margin-top'))
         var bgwidth=bg.outerWidth()*2;
         var bgheight=bg.outerHeight()*2;
@@ -219,6 +218,7 @@ body{
         var height=imgs.height()*2;
         var y=bt*2;
         var x=bl*2;
+       
         var bgurl='{$bgimg}';
         var imgurl='{$imgurl}';
          $.ajax({
